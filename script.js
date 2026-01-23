@@ -50,6 +50,7 @@ function initializeQuickBite() {
 function updateNavbarProfile(name) {
   const navContainer = document.getElementById("nav-actions");
   const profileSlot = document.getElementById("nav-profile-slot");
+
   if (!navContainer || !profileSlot) return;
 
   // 1. Add the "flex" and "border" styling class
@@ -60,12 +61,28 @@ function updateNavbarProfile(name) {
 
   // Inject the circular profile icon
   profileSlot.innerHTML = `
-    <div class="nav-profile-circle" 
-         data-name="${name}" 
-         onclick="location.href='my_orders.html'">
-      ${initial}
+    <div style="display: flex; align-items: center; gap: 8px;">
+      
+      
+      <div class="nav-profile-circle" onclick="location.href='my_orders.html'">
+        ${initial}
+      </div>
+
+      <button class="btn-change-name" onclick="changeName()" title="Switch User">
+        <span class="material-symbols-outlined">sync_alt</span>
+      </button>
     </div>
   `;
+}
+
+// 2. The Reset Logic
+function changeName() {
+  // Remove only the name, NOT the table
+  localStorage.removeItem("customerName");
+
+  // Reload the page to trigger the initializeQuickBite() flow again
+  // Since customerName is now gone, it will show the glass modal
+  location.reload();
 }
 
 function getGreeting() {

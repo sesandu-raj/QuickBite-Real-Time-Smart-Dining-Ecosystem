@@ -646,3 +646,29 @@ footer {
   border-color: var(--primary);
   background: rgba(255, 255, 255, 0.08);
 }
+
+/* Change Name Button Style */
+.btn-change-name {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-change-name:hover {
+  background: rgba(244, 140, 37, 0.1);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: rotate(180deg); /* Subtle animation for "switching" */
+}
+
+.btn-change-name .material-symbols-outlined {
+  font-size: 18px;
+}
