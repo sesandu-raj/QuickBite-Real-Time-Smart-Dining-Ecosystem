@@ -39,23 +39,30 @@
       </header>
 
       <main>
-        <section class="hero container">
+        <section class="hero container" id="hero-section">
           <div class="badge-247 glass">
             <span class="material-symbols-outlined" style="font-size: 14px"
               >circle</span
             >
-            OPEN 24/7 - NEVER CLOSED
+            <span id="live-status">OPEN 24/7 - NEVER CLOSED</span>
           </div>
-          <h1>
-            Always Open, <br />
-            <span class="gradient-text">Always Fresh</span>
-          </h1>
-          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto">
-            Your 24-hour study sanctuary. Sunrise espresso or midnight mocha, we
-            fuel your academic journey.
-          </p>
-          <div class="hero-btns">
-            <button class="btn-main">View Full Menu</button>
+
+          <div id="dynamic-greeting">
+            <h1>
+              Always Open, <br /><span class="gradient-text">Always Fresh</span>
+            </h1>
+            <p
+              style="color: var(--text-muted); max-width: 600px; margin: 0 auto"
+            >
+              Your 24-hour study sanctuary. Sunrise espresso or midnight mocha,
+              we fuel your academic journey.
+            </p>
+          </div>
+
+          <div class="hero-btns" id="hero-controls">
+            <button class="btn-main" onclick="location.href = 'menu.html'">
+              View Full Menu
+            </button>
             <button class="btn-primary glass" style="color: white">
               Reserve a Pod
             </button>
@@ -366,5 +373,6 @@
         </div>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
