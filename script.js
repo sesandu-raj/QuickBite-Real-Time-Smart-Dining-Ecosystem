@@ -19,13 +19,36 @@ function initializeQuickBite() {
       if (!userName || userName.trim() === "") {
         userName = "Guest";
       }
-
       localStorage.setItem("customerName", userName);
     }
+
+    // Update navbar with the name
+    updateNavbarProfile(userName);
 
     // Now that we have a name, show the personalized greeting
     showPersonalizedGreeting(userName, tableNumber);
   }
+}
+
+function updateNavbarProfile(name) {
+  const navContainer = document.getElementById("nav-actions");
+  const profileSlot = document.getElementById("nav-profile-slot");
+  if (!navContainer || !profileSlot) return;
+
+  // 1. Add the "flex" and "border" styling class
+  navContainer.classList.add("has-user");
+
+  // Get the first letter of the user's name
+  const initial = name.charAt(0).toUpperCase();
+
+  // Inject the circular profile icon
+  profileSlot.innerHTML = `
+    <div class="nav-profile-circle" 
+         data-name="${name}" 
+         onclick="location.href='my_orders.html'">
+      ${initial}
+    </div>
+  `;
 }
 
 function getGreeting() {

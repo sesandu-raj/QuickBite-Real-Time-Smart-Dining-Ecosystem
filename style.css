@@ -543,3 +543,38 @@ footer {
     align-items: center;
   }
 }
+
+/* Default state: No flex spacing needed for a single button */
+.nav-actions {
+    display: block; 
+}
+
+/* Scanned/Login state: Triggered via JavaScript */
+.nav-actions.has-user {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Gap between button and profile icon */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 4px 4px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+/* Profile Icon Styling */
+.nav-profile-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav-profile-circle:hover {
+    transform: scale(1.05);
+}
