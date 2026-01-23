@@ -1,0 +1,117 @@
+/* google font import */
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap");
+:root {
+  /* colors */
+  --green: #17a34a;
+  --orange: #f28b24;
+  --ash: rgb(82, 88, 98, 0.5);
+  --gray: rgba(255, 255, 255, 0.03);
+  --background: rgb(15, 15, 15);
+  --red: #cb5355;
+  --white: #ffffff;
+
+  /* fonts */
+  --font-main: "Nunito", sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* gobal style */
+body {
+  background-color: var(--background);
+  font-family: var(--font-main);
+  color: var(--white);
+  margin: 0;
+  padding: var(--space-md);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* layout */
+.navBar {
+    border-bottom:2px solid var(--ash);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* components */
+.logo {
+    height: 40px;
+    width: 40px;
+    background-color: var(--orange);
+    border-radius: var(--radius-md);
+    margin-right: var(--space-sm);
+}
+
+.profile {
+    height: 40px;
+    width: 40px;
+    background-color: var(--ash);
+    border-radius: 20px;
+    margin-left: var(--space-md);
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+    background-color: var(--gray);
+    border-radius: var(--radius-md);
+    margin-right: var(--space-sm);
+}
+
+li {
+    padding: var(--space-sm);
+}
+
+input {
+    background-color: var(--gray);
+    color: var(--white);
+    outline: none;border-radius: var(--radius-md);
+    width: 200px;
+    height: 30px;
+    padding: 2px;
+    padding-left: var(--space-md);
+    border: 1px solid var(--ash);
+}
+
+.title {
+    padding: var(--space-sm);
+}
+
+.rightSection {
+    margin-right: var(--space-sm);
+}
+
+.managingIconn {
+    margin-right: var(--space-sm);
+    margin-left: var(--space-lg);
+}
+
+.search {
+    margin-right: var(--space-md);
+}
