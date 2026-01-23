@@ -1,32 +1,47 @@
 let tableNumber = null;
+
 function initializeQuickBite() {
   const urlParams = new URLSearchParams(window.location.search);
   const tableNumber = urlParams.get("table");
-  const dynamicArea = document.getElementById("dynamic-greeting");
-  const liveStatus = document.getElementById("live-status");
+  const userName = localStorage.getItem("customerName");
+  const navContainer = document.getElementById("nav-actions");
 
-  // Scenario: User scanned a QR code (Table parameter exists)
+  // Only proceed if a table number exists in the URL
   if (tableNumber) {
-    let userName = localStorage.getItem("customerName");
-
-    // If we don't know their name yet, ask for it
     if (!userName) {
-      userName = prompt(
-        `${getGreeting()}! Welcome to Table ${tableNumber}. Please enter your name:`,
-      );
+      // 1. Show the custom glass modal
+      const overlay = document.getElementById("custom-prompt-overlay");
+      const tableDisplay = document.getElementById("prompt-table-display");
+      const confirmBtn = document.getElementById("confirm-name-btn");
 
-      // Default to "Guest" if they cancel or leave it empty
-      if (!userName || userName.trim() === "") {
-        userName = "Guest";
+      if (overlay && tableDisplay) {
+        tableDisplay.innerText = `Table ${tableNumber}`;
+        overlay.style.display = "flex"; // Reveal the professional glass modal
       }
-      localStorage.setItem("customerName", userName);
+
+      // 2. Handle the "Start Dining" button click
+      confirmBtn.onclick = function () {
+        const input = document.getElementById("custom-name-input");
+        const enteredName = input.value.trim() || "Guest";
+
+        // Save to storage and hide modal
+        localStorage.setItem("customerName", enteredName);
+        overlay.style.display = "none";
+
+        // Trigger UI updates
+        updateNavbarProfile(enteredName);
+        showPersonalizedGreeting(enteredName, tableNumber);
+      };
+    } else {
+      // User is already "logged in", update UI immediately
+      updateNavbarProfile(userName);
+      showPersonalizedGreeting(userName, tableNumber);
     }
-
-    // Update navbar with the name
-    updateNavbarProfile(userName);
-
-    // Now that we have a name, show the personalized greeting
-    showPersonalizedGreeting(userName, tableNumber);
+  } else {
+    // Normal visit: ensure the navbar is in its default state
+    if (navContainer) {
+      navContainer.classList.remove("has-user");
+    }
   }
 }
 
