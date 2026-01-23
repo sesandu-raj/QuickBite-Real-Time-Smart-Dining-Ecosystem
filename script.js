@@ -8,6 +8,8 @@ function initializeQuickBite() {
 
   // Only proceed if a table number exists in the URL
   if (tableNumber) {
+    localStorage.setItem("assignedTable", tableNumber);
+
     if (!userName) {
       // 1. Show the custom glass modal
       const overlay = document.getElementById("custom-prompt-overlay");
