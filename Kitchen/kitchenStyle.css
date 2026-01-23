@@ -1,0 +1,307 @@
+/* google font import */
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap");
+:root {
+  /* colors */
+  --green: #17a34a;
+  --orange: #f28b24;
+  --ash: rgb(82, 88, 98, 0.5);
+  --ash-light: rgb(82, 88, 98);
+  --gray: rgba(255, 255, 255, 0.03);
+  --background: rgb(15, 15, 15);
+  --red: #cb5355;
+  --white: #ffffff;
+  --blue: #255EEF;
+
+  /* fonts */
+  --font-main: "Nunito", sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* gobal style */
+body {
+  background-color: var(--background);
+  font-family: var(--font-main);
+  color: var(--white);
+  margin: 20px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: var(--space-md);
+  padding-top: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* layout */
+.navBar {
+    border-bottom:2px solid var(--ash);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* components */
+.logo {
+    height: 40px;
+    width: 40px;
+    background-color: var(--orange);
+    border-radius: var(--radius-md);
+    margin-right: var(--space-sm);
+}
+
+.profile {
+    height: 40px;
+    width: 40px;
+    background-color: var(--ash);
+    border-radius: 20px;
+    margin-left: var(--space-md);
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+    background-color: var(--gray);
+    border-radius: var(--radius-md);
+    margin-right: var(--space-sm);
+}
+
+li {
+    padding: var(--space-sm);
+}
+
+input {
+    background-color: var(--gray);
+    color: var(--white);
+    outline: none;border-radius: var(--radius-md);
+    width: 200px;
+    height: 30px;
+    padding: 2px;
+    padding-left: var(--space-md);
+    border: 1px solid var(--ash);
+}
+
+.title {
+    padding: var(--space-sm);
+}
+
+.rightSection {
+    margin-right: var(--space-sm);
+}
+
+.managingIconn {
+    margin-right: var(--space-sm);
+    margin-left: var(--space-lg);
+}
+
+.search {
+    margin-right: var(--space-md);
+}
+
+.tab-1 {
+    font-weight: bold;
+    padding: var(--space-md);
+    border-bottom: 2px solid var(--orange);
+}
+
+.tab {
+    font-weight: bold;
+    padding: var(--space-md);
+    color: var(--ash-light);
+}
+
+.count-1, .count-2,  .count-3 {
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    border-radius: 1px;
+    margin-left: var(--space-sm);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.count-1{
+    background-color: var(--blue);
+}
+
+.count-2{
+    background-color: var(--orange);
+}
+
+.count-3{
+    background-color: var(--green);
+}
+
+.orderManageSection {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px; 
+    gap: 30px;
+    padding-left: 40px;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.orderManageSection::-webkit-scrollbar{
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ash);
+    width: 300px;
+    height: 300px;
+    border-radius: var(--radius-md);
+    border-left: 5px solid var(--blue);
+}
+
+.heading {
+    border-bottom: 1px solid var(--ash-light);
+}
+
+.table{
+    padding: 20px;
+}
+
+.timeContainer{
+    padding-left: 0px;
+    justify-content: space-between;
+}
+
+.tableNumber {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.orderID {
+    font-size: smaller;
+    color: var(--ash-light);
+}
+
+.time {
+    font-size: smaller;
+    color: var(--blue);
+}
+
+.timeIcon {
+    height: 8px;
+    width: 8px; 
+    background-color: var(--blue);
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.cardContent {
+    margin-left: 8px;
+    padding-left: 8px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.cardContent::-webkit-scrollbar{
+    display: none;
+}
+
+.quantity {
+    color: var(--orange);
+    font-weight: bold;
+    padding: 5px;
+    padding-right: 10px;
+}
+
+.category {
+    padding-left: 10px;
+}
+
+.extraChanges {
+    font-size: smaller;
+    font-style: italic;
+    color: var(--ash-light);
+    padding-left: 10px;
+}
+
+.btn {
+    padding: 10px;
+    width: 200px;
+    background-color: var(--orange);
+    font-weight: bold;
+    color: var(--background);
+    border-radius: var(--radius-md);
+    margin-left: 20px;
+    border: none;
+}
+
+.more {
+    width: 40px;
+    height: 40px;
+    background-color: var(--gray);
+    border-radius: var(--radius-md);
+    margin-left: 10px;
+}
+
+.footer {
+    padding-top: 18px;
+    padding-bottom: 20px;
+    height: 50px;
+    border-radius: 0,0,var(--radius-md),var(--radius-md);
+    background-color: var(--gray);
+}
+
+.orderSummary {
+    border-top: 2px solid var(--ash);
+    margin-top: 15px;
+}
+
+p{
+    margin-top: -10px;
+    margin-right: 40px;
+}
+
+.Sicon-1,.Sicon-2,.Sicon-3 {
+    height: 10px;
+    width: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.Sicon-1 {
+    background-color: var(--blue);
+}
+
+.Sicon-2 {
+    background-color: var(--orange);
+}
+
+.Sicon-3 {
+    background-color: var(--green);
+}
+
+.Scont-1, p {
+    font-size: small;
+    font-weight: bold;
+    color: var(--ash-light);
+}
