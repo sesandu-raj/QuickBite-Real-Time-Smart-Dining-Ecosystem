@@ -1,12 +1,12 @@
-// order managing section
-const incomingTab = document.getElementById('incoming-tab');
-const preparingTab = document.getElementById('preparing-tab');
-const readyTab = document.getElementById('ready-tab');
-
 // source section - catch
 const incomingSection = document.getElementById('incoming-section');
 const preparingSection = document.getElementById('preparing-section');
 const readySection = document.getElementById('ready-section');
+
+// Tabs
+const incTab = document.getElementById('incTb');
+const prepTab = document.getElementById('prepTb');
+const readyTab = document.getElementById('readyTb');
 
 
 // load default content
@@ -27,11 +27,11 @@ function loadContent(id){
     
     // clear previous content
     orderSection.innerHTML = "";
-    
 
     switch(id){
         case "incoming-section":
             const cloneContent = incomingSection.cloneNode(true);
+            activateTab(incTab);
             cloneContent.classList.remove("hidden");
             orderSection.appendChild(cloneContent);
 
@@ -39,6 +39,7 @@ function loadContent(id){
 
         case "preparing-section":
             const cloneContentPrepare = preparingSection.cloneNode(true);
+            activateTab(prepTab);
             cloneContentPrepare.classList.remove("hidden");
             orderSection.appendChild(cloneContentPrepare);
             
@@ -46,6 +47,7 @@ function loadContent(id){
 
         case "ready-section":
             const cloneContentReady = readySection.cloneNode(true);
+            activateTab(readyTab);
             cloneContentReady.classList.remove("hidden");
             orderSection.appendChild(cloneContentReady);
             
@@ -54,4 +56,19 @@ function loadContent(id){
 
 }
 
-
+// tab active funtion
+function activateTab(id){
+    if(id == incTab){
+        incTab.classList.add("tab-active");
+        prepTab.classList.remove("tab-active");
+        readyTab.classList.remove("tab-active");
+    }else if(id == prepTab){
+        prepTab.classList.add("tab-active");
+        incTab.classList.remove("tab-active");
+        readyTab.classList.remove("tab-active");
+    }else{
+        readyTab.classList.add("tab-active");
+        incTab.classList.remove("tab-active");
+        prepTab.classList.remove("tab-active");
+    }
+}
