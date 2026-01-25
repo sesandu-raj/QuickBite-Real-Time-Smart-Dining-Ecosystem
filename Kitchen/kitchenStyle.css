@@ -125,17 +125,19 @@ input {
     margin-right: var(--space-md);
 }
 
-.tab-1 {
-    font-weight: bold;
-    padding: var(--space-md);
-    border-bottom: 2px solid var(--orange);
-}
-
 .tab {
     font-weight: bold;
     padding: var(--space-md);
     color: var(--ash-light);
 }
+
+.tab-active {
+    font-weight: bold;
+    color: var(--white);
+    /* padding: var(--space-md); */
+    border-bottom: 2px solid var(--orange);
+}
+
 
 .count-1, .count-2,  .count-3 {
     height: 20px;
@@ -145,6 +147,7 @@ input {
     margin-left: var(--space-sm);
     border-radius: 10px;
     text-align: center;
+    color: var(--white);
 }
 
 .count-1{
@@ -172,6 +175,34 @@ input {
     display: none;
 }
 
+.orderManageSection-preparing::-webkit-scrollbar{
+    display: none;
+}
+
+.more-icon {
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.avatar-icon {
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.Cincoming{
+    border-left: 5px solid var(--blue);
+}
+
+.Cpreparing{
+    border-left: 5px solid var(--orange);
+}
+
+.Cready{
+    border-left: 5px solid var(--green);
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -179,7 +210,6 @@ input {
     width: 300px;
     height: 300px;
     border-radius: var(--radius-md);
-    border-left: 5px solid var(--blue);
 }
 
 .heading {
@@ -210,10 +240,36 @@ input {
     color: var(--blue);
 }
 
+.time-prep {
+    font-size: smaller;
+    color: var(--orange);
+}
+
+.time-ready {
+    font-size: smaller;
+    color: var(--green);
+}
+
 .timeIcon {
     height: 8px;
     width: 8px; 
     background-color: var(--blue);
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.timeIcon-prep {
+    height: 8px;
+    width: 8px; 
+    background-color: var(--orange);
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.timeIcon-ready {
+    height: 8px;
+    width: 8px; 
+    background-color: var(--green);
     margin-right: 5px;
     border-radius: 4px;
 }
@@ -228,6 +284,7 @@ input {
 .cardContent::-webkit-scrollbar{
     display: none;
 }
+
 
 .quantity {
     color: var(--orange);
@@ -256,6 +313,29 @@ input {
     border-radius: var(--radius-md);
     margin-left: 20px;
     border: none;
+}
+
+.btn-prep {
+    padding: 10px;
+    width: 250px;
+    background-color: var(--gray);
+    font-weight: bold;
+    color: var(--orange);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--orange);
+    margin-left: 20px;
+    
+}
+
+.btn-ready{
+    padding: 10px;
+    width: 250px;
+    background-color: var(--green);
+    font-weight: bold;
+    color: var(--white);
+    border-radius: var(--radius-md);
+    border: none;
+    margin-left: 20px;
 }
 
 .btn:hover {
