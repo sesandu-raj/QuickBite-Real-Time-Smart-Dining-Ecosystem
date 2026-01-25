@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Orders | QuickBite</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="order-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <header class="glass">
+      <div class="container nav-wrapper">
+        <a
+          href="../index.html"
+          class="logo"
+          style="text-decoration: none; color: inherit"
+        >
+          <span class="material-symbols-outlined">all_inclusive</span>
+          <h2>QuickBite</h2>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="/My_Orders/my_orders.html">My Orders</a></li>
+          </ul>
+        </nav>
+        <button class="btn-order">Order Now</button>
+      </div>
+    </header>
+
+    <main class="order-list">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+        "
+      >
+        <h1 style="font-size: 3rem; font-weight: 900">My Orders History</h1>
+        <button class="btn-glass" style="font-size: 0.9rem">
+          <span
+            class="material-symbols-outlined"
+            style="font-size: 18px; vertical-align: middle"
+            >refresh</span
+          >
+          Refresh Status
+        </button>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 40px">
+        <button class="filter-btn active">All Orders</button>
+        <button class="filter-btn">Active (2)</button>
+        <button class="filter-btn">Completed</button>
+        <button class="filter-btn">Cancelled</button>
+      </div>
+
+      <div class="order-card">
+        <div
+          class="order-thumbnail"
+          style="
+            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC7WKn4EjoHhlQVn5a0vVZV22KF_AP43FT617h8aAhW3q2PqoAFFjC3zq2M_-98HWUle5ebjNyZ_QCl58IwGhgVOvuMCaeYwwg4mt26vsGOGswi_76znzO-_N_GEkgFf_1K1KOGCIz4GCCq1aWho2Hjk_1B0ihTOmt3ZDErU1-KNHSkmUChhGNn_7fhneJj6OHJOB32dI3lPUIs-errNZjce6kOvS0etkcxQ_P-Rwr4hCxgeJn8Th2_x22AT2EapTBPOjFT2A2DSFpv&quot;);
+          "
+        ></div>
+        <div style="flex-grow: 1">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            "
+          >
+            <div>
+              <p
+                style="
+                  color: var(--primary);
+                  font-size: 0.7rem;
+                  font-weight: 800;
+                  margin-bottom: 5px;
+                "
+              >
+                ACTIVE NOW
+              </p>
+              <h3>Order #8824</h3>
+              <p style="color: var(--text-muted); font-size: 0.8rem">
+                Today, 12:45 PM • Table 12
+              </p>
+            </div>
+            <div class="badge-ready">
+              <span class="material-symbols-outlined">check_circle</span> READY
+              FOR PICKUP
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+            "
+          >
+            <p style="font-size: 0.9rem">
+              1x Spicy Miso Ramen, 1x Thai Iced Tea
+            </p>
+            <div class="total-section">
+              <p class="total-label">TOTAL BILL</p>
+              <p class="total-amount">$18.50</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-card">
+        <div
+          class="order-thumbnail"
+          style="
+            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuALAxGSEQyN5s2Saa44RqhlANl4sfk4BQXhI-OixdAK_BS_m8cI-S56DDOxFEw4EEQGLpcLJN4qOBmTackQdRb7NNfMXR7kxKCxXUYLJ1U4EULihfAK7qTk5WGxkLGbTkGoXrjYW6459YWehsotz8NPBK7ZAMbLeiOKr7YllqZ6G1enZcRRniNfz7hOIG07CBDLjA4IktJzGPfFGjeQ3vaETGI4pw59BFL2pW4h-Uzik_6gni_NQ8Nh5M-OkjI4_tCIvs8anz2pSe-4&quot;);
+          "
+        ></div>
+        <div style="flex-grow: 1">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            "
+          >
+            <div>
+              <p
+                style="
+                  color: #3b82f6;
+                  font-size: 0.7rem;
+                  font-weight: 800;
+                  margin-bottom: 5px;
+                "
+              >
+                IN PROGRESS
+              </p>
+              <h3>Order #8831</h3>
+              <p style="color: var(--text-muted); font-size: 0.8rem">
+                Today, 1:10 PM • Terrace Dining Hall
+              </p>
+            </div>
+            <div class="badge-preparing">PREPARING</div>
+          </div>
+          <div
+            style="
+              margin-top: 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+            "
+          >
+            <p style="font-size: 0.9rem">1x Double Smash Burger Combo</p>
+            <div class="total-section">
+              <p class="total-label">TOTAL BILL</p>
+              <p class="total-amount">$14.25</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="glass-card"
+        style="
+          padding: 24px;
+          margin-top: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div style="display: flex; gap: 15px; align-items: center">
+          <div
+            style="
+              background: var(--primary);
+              padding: 10px;
+              border-radius: 12px;
+              display: flex;
+            "
+          >
+            <span class="material-symbols-outlined" style="color: black"
+              >account_balance_wallet</span
+            >
+          </div>
+          <div>
+            <h4 style="margin: 0">Student Wallet Balance</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0">
+              Last transaction: -$18.50
+            </p>
+          </div>
+        </div>
+        <div style="text-align: right">
+          <p class="total-label">AVAILABLE</p>
+          <p style="font-size: 1.8rem; font-weight: 900; margin: 0">$84.20</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="logo">
+                <span class="material-symbols-outlined">all_inclusive</span>
+                <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+              </div>
+              <p>
+                Dedicated to the night owls, the morning birds, and everyone in
+                between. We are your 24/7 sanctuary for productivity.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >public</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >share</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >mail</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <div>
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="Menu/menu.html">Menu</a></li>
+                <li><a href="My_Orders/my_orders.html">My Orders</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-heading">Visit Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span
+                    >123 University Ave,<br />Campus District, NY 10012</span
+                  >
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span
+                    >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                    Hour</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 QuickBite. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

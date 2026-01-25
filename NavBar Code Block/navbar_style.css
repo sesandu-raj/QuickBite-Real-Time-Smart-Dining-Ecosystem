@@ -1,0 +1,92 @@
+:root {
+  --primary: #f48c25;
+  --primary-hover: #e07b1d;
+  --bg-dark: #0a0a0a;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0; /* Exact homepage padding */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure this matches your Homepage .container width */
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Standard container width */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Homepage gap */
+}
+
+.logo h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.logo .material-symbols-outlined {
+  color: var(--primary);
+  font-size: 30px; /* Exact homepage icon size */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px; /* Exact homepage gap */
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.875rem; /* Exact homepage font size */
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+}
+
+.btn-order {
+  background: var(--primary);
+  color: var(--bg-dark);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 15px rgba(244, 140, 37, 0.2);
+}
+
+.btn-order:hover {
+  transform: scale(0.95); /* Exact homepage interaction */
+  background: var(--primary-hover);
+}
