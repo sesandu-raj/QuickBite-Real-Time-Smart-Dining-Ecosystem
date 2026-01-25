@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Main Course | QuickBite</title>
+    <link rel="stylesheet" href="main_course.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background-dark font-display">
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
+
+    <!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span>
+          .
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div style="position: sticky; top: 0; z-index: 50">
+      <header class="glass">
+        <div class="container nav-wrapper">
+          <!-- Logo (UPDATE the href based on your location) -->
+          <a
+            href="index.html"
+            class="logo"
+            style="text-decoration: none; color: inherit"
+          >
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </a>
+
+          <!-- Navigation Links (UPDATE the href paths based on your location) -->
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Menu/manu_final.html">Menu</a></li>
+              <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+
+          <!-- Nav Actions: Order Button + User Profile -->
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="relative-content">
+      <main class="container py-8">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="material-symbols-outlined">chevron_right</span>
+          <a href="menu.html">Menu</a>
+          <span class="material-symbols-outlined">chevron_right</span>
+          <span class="text-primary">Main Course</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h1 class="page-title">Main Course</h1>
+            <p class="text-muted">
+              Freshly prepared meals for your study break
+            </p>
+          </div>
+          <div class="filter-tabs">
+            <a href="#" class="tab active">All Items</a>
+            <a href="#" class="tab">Vegetarian</a>
+            <a href="#" class="tab">Spicy</a>
+            <a href="#" class="tab">Popular</a>
+          </div>
+        </div>
+
+        <div class="food-grid">
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=1000"
+                alt="Sri Lankan Rice and Curry"
+              />
+              <span class="badge-popular">Best Seller</span>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Signature Rice & Curry</h3>
+                <p class="price">Rs. 850</p>
+              </div>
+              <p class="card-desc">
+                Traditional red rice served with 5 seasonal curries, dhal, and
+                crispy papadum.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1633383718081-22ac93e3dbf1?q=80&w=1000"
+                alt="Chicken Kottu Roti"
+              />
+              <span class="badge-spicy">Spicy</span>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Cheese Chicken Kottu</h3>
+                <p class="price">Rs. 1200</p>
+              </div>
+              <p class="card-desc">
+                Chopped godamba roti stir-fried with fresh veggies, egg,
+                shredded chicken, and melted cheese.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1627444230620-315993e18a8d?q=80&w=1000"
+                alt="Sri Lankan Hoppers"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Egg Hopper Set (3pcs)</h3>
+                <p class="price">Rs. 450</p>
+              </div>
+              <p class="card-desc">
+                Crispy edge pancakes with a soft center, served with spicy lunu
+                miris and seeni sambol.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1000"
+                alt="Lamprais"
+              />
+              <span class="badge-popular">Authentic</span>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Mixed Meat Lamprais</h3>
+                <p class="price">Rs. 1500</p>
+              </div>
+              <p class="card-desc">
+                Dutch-influenced rice boiled in meat stock, wrapped and baked in
+                a banana leaf for aroma.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1000"
+                alt="Crab Curry"
+              />
+              <span class="badge-spicy">Extra Spicy</span>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Jaffna Crab Curry</h3>
+                <p class="price">Rs. 2800</p>
+              </div>
+              <p class="card-desc">
+                Fresh lagoon crab cooked in a fiery blend of roasted Jaffna
+                spices and coconut milk.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000"
+                alt="String Hoppers"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>String Hopper Pillau</h3>
+                <p class="price">Rs. 950</p>
+              </div>
+              <p class="card-desc">
+                Steamed string hoppers tossed with fried onions, cashews, and
+                served with a thick chicken gravy.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1000"
+                alt="Fish Curry"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Sour Fish (Ambul Thiyal)</h3>
+                <p class="price">Rs. 1100</p>
+              </div>
+              <p class="card-desc">
+                Tuna cubes dry-cooked with black pepper and 'goraka' for a
+                unique tart and smoky flavor.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df056fb04791?q=80&w=1000"
+                alt="Pol Roti"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Rustic Pol Roti Set</h3>
+                <p class="price">Rs. 550</p>
+              </div>
+              <p class="card-desc">
+                Four coconut flatbreads served with spicy katta sambol and a
+                creamy dhal curry.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=1000"
+                alt="Watalappam"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Jaggery Watalappam</h3>
+                <p class="price">Rs. 400</p>
+              </div>
+              <p class="card-desc">
+                Rich coconut custard sweetened with kitul jaggery and infused
+                with cardamom and nutmeg.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card glass">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1621506289937-9cd14d003d3b?q=80&w=1000"
+                alt="Woodapple Smoothie"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>Chilled Woodapple Mix</h3>
+                <p class="price">Rs. 350</p>
+              </div>
+              <p class="card-desc">
+                Tangy and sweet tropical woodapple pulp blended with coconut
+                milk and a touch of honey.
+              </p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button>
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span>1</span>
+                  <button>
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <!-- COLUMN 1: Brand & Description -->
+            <div class="footer-brand">
+              <div class="logo">
+                <span class="material-symbols-outlined">all_inclusive</span>
+                <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+              </div>
+              <p>
+                Dedicated to the night owls, the morning birds, and everyone in
+                between. We are your 24/7 sanctuary for productivity.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >public</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >share</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >mail</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <!-- COLUMN 2: Quick Links -->
+            <div>
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Digital Menu</a></li>
+                <li><a href="#">Study Pod Booking</a></li>
+                <li><a href="#">Student Perks</a></li>
+                <li><a href="#">Rewards Program</a></li>
+              </ul>
+            </div>
+
+            <!-- COLUMN 3: Contact Info -->
+            <div>
+              <h4 class="footer-heading">Visit Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span
+                    >123 University Ave,<br />Campus District, NY 10012</span
+                  >
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span
+                    >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                    Hour</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+          <div class="footer-bottom">
+            <p>© 2026 QuickBite. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
+  </body>
+</html>

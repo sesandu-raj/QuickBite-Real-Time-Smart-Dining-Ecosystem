@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     loadContent('incoming-section');
 });
 
+
 function loadContent(id){
     if(id == null || id == "" || id == undefined){
         console.log(id);
@@ -26,7 +27,7 @@ function loadContent(id){
     
     // clear previous content
     orderSection.innerHTML = "";
-
+    
 
     switch(id){
         case "incoming-section":
@@ -53,9 +54,4 @@ function loadContent(id){
 
 }
 
-
-
-// Folders : simple, main-course
-// Model : First letter is capital
-// Files : simple, main-course.html / mainCourse.html 
 
