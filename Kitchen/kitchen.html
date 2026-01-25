@@ -53,27 +53,37 @@
             <ul class="flex">
                 <li class="flex tab-1">
                     <div class="flex">
-                        <div>Incoming</div>
+                        <a onclick="loadContent('incoming-section')">
+                            <div id="incoming-tab" style="cursor: pointer;">Incoming</div>
+                        </a>
                         <div class="count-1">5</div>
                     </div>
                 </li>
                 <li class="flex tab">
                     <div class="flex">
-                        <div>Preparing</div>
+                        <a onclick="loadContent('preparing-section')">
+                            <div id="preparing-tab" style="cursor: pointer;">Preparing</div>
+                        </a>
                         <div class="count-2">3</div>
                     </div>
                 </li>
                 <li class="flex tab">
                     <div class="flex">
-                        <div>Ready</div>
+                        <a onclick="loadContent('ready-section')">
+                            <div id="ready-tab" style="cursor: pointer;">Ready</div>
+                        </a>
                         <div class="count-3">2</div>
                     </div>
                 </li>
             </ul>
         </div>
 
+        <!-- Content will be loaded dynamically -->
+        <div id="order-section"></div>
+
         <!-- order cards section -->
-        <div class="orderManageSection">
+        <!-- incoming -->
+        <div class="orderManageSection-incoming hidden" id="incoming-section">
             <!-- card 1 -->
             <div class="cardContainer">
                 <div class="card">
@@ -220,7 +230,7 @@
                 </div>
             </div>
 
-            <!-- card 3 -->
+            <!-- card 4 -->
             <div class="cardContainer">
                 <div class="card">
                     <!-- card heading -->
@@ -266,7 +276,7 @@
                 </div>
             </div>
 
-            <!-- card 3 -->
+            <!-- card 5 -->
             <div class="cardContainer">
                 <div class="card">
                     <!-- card heading -->
@@ -313,8 +323,261 @@
             </div>
         </div>
 
+        <!-- preparing -->
+        <div class="orderManageSection-preparing hidden" id="preparing-section">
+            <!-- card 1 -->
+            <div class="cardContainer">
+                <div class="card">
+                    <!-- card heading -->
+                    <div class="heading flex">
+                        <!-- table name and the order ID -->
+                        <div class="table">
+                            <div class="tableNumber">Table 04</div>
+                            <div class="orderID">#ORD 2489 . student ID: 9402</div>
+                        </div>
+                        <!-- time display -->
+                        <div class="timeContainer flex">
+                            <div class="timeIcon"></div>
+                            <div class="time">2m ago</div>
+                        </div>
+                    </div>
+
+                    <!-- card content -->
+                    <div class="content">
+                        <ul class="cardContent">
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">1x</div>
+                                <div>
+                                    <div class="category">Coke Zero</div>
+                                    <div class="extraChanges"> </div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- card footer -->
+                    <div class="footer flex">
+                        <button class="btn">Start Preparing</button>
+                        <div class="more"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="cardContainer">
+                <div class="card">
+                    <!-- card heading -->
+                    <div class="heading flex">
+                        <!-- table name and the order ID -->
+                        <div class="table">
+                            <div class="tableNumber">Table 12</div>
+                            <div class="orderID">#ORD 2489 . student ID: 9402</div>
+                        </div>
+                        <!-- time display -->
+                        <div class="timeContainer flex">
+                            <div class="timeIcon"></div>
+                            <div class="time">5m ago</div>
+                        </div>
+                    </div>
+
+                    <!-- card content -->
+                    <div class="content">
+                        <ul class="cardContent">
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">1x</div>
+                                <div>
+                                    <div class="category">Coke Zero</div>
+                                    <div class="extraChanges"> </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- card footer -->
+                    <div class="footer flex">
+                        <button class="btn">Start Preparing</button>
+                        <div class="more"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="cardContainer">
+                <div class="card">
+                    <!-- card heading -->
+                    <div class="heading flex">
+                        <!-- table name and the order ID -->
+                        <div class="table">
+                            <div class="tableNumber">Table 01</div>
+                            <div class="orderID">#ORD 2489 . student ID: 9402</div>
+                        </div>
+                        <!-- time display -->
+                        <div class="timeContainer flex">
+                            <div class="timeIcon"></div>
+                            <div class="time">2m ago</div>
+                        </div>
+                    </div>
+
+                    <!-- card content -->
+                    <div class="content">
+                        <ul class="cardContent">
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">1x</div>
+                                <div>
+                                    <div class="category">Coke Zero</div>
+                                    <div class="extraChanges"> </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- card footer -->
+                    <div class="footer flex">
+                        <button class="btn">Start Preparing</button>
+                        <div class="more"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ready -->
+        <div class="orderManageSection-ready hidden" id="ready-section">
+            <!-- card 1 -->
+            <div class="cardContainer">
+                <div class="card">
+                    <!-- card heading -->
+                    <div class="heading flex">
+                        <!-- table name and the order ID -->
+                        <div class="table">
+                            <div class="tableNumber">Table 04</div>
+                            <div class="orderID">#ORD 2489 . student ID: 9402</div>
+                        </div>
+                        <!-- time display -->
+                        <div class="timeContainer flex">
+                            <div class="timeIcon"></div>
+                            <div class="time">2m ago</div>
+                        </div>
+                    </div>
+
+                    <!-- card content -->
+                    <div class="content">
+                        <ul class="cardContent">
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">1x</div>
+                                <div>
+                                    <div class="category">Coke Zero</div>
+                                    <div class="extraChanges"> </div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- card footer -->
+                    <div class="footer flex">
+                        <button class="btn">Start Preparing</button>
+                        <div class="more"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="cardContainer">
+                <div class="card">
+                    <!-- card heading -->
+                    <div class="heading flex">
+                        <!-- table name and the order ID -->
+                        <div class="table">
+                            <div class="tableNumber">Table 12</div>
+                            <div class="orderID">#ORD 2489 . student ID: 9402</div>
+                        </div>
+                        <!-- time display -->
+                        <div class="timeContainer flex">
+                            <div class="timeIcon"></div>
+                            <div class="time">5m ago</div>
+                        </div>
+                    </div>
+
+                    <!-- card content -->
+                    <div class="content">
+                        <ul class="cardContent">
+                            <li class="flex">
+                                <div class="quantity">2x</div>
+                                <div>
+                                    <div class="category">Pepperoni Pizza</div>
+                                    <div class="extraChanges">Extra choose: No Crust</div>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="quantity">1x</div>
+                                <div>
+                                    <div class="category">Coke Zero</div>
+                                    <div class="extraChanges"> </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- card footer -->
+                    <div class="footer flex">
+                        <button class="btn">Start Preparing</button>
+                        <div class="more"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
+    <!-- Summary section -->
     <section class="summary">
         <div class="orderSummary flex flex-1">
             <ul class="flex">
@@ -336,7 +599,11 @@
                 <p>AVG. PREP TIME 14.5 MIN . SERVICE HEALTH : OPTIMAL</p>
             </div>
         </div>
+
     </section>
+
+    <!-- Js link -->
+    <script src="kitchen.js"></script>
 </body>
 
 </html>

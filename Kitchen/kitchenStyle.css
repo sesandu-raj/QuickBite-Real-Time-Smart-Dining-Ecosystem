@@ -3,14 +3,17 @@
 :root {
   /* colors */
   --green: #17a34a;
-  --orange: #f28b24;
+  --orange: #f48c25;
+  --orange-hover: #e07b1d;
   --ash: rgb(82, 88, 98, 0.5);
   --ash-light: rgb(82, 88, 98);
   --gray: rgba(255, 255, 255, 0.03);
+  --gray-border: rgba(255, 255, 255, 0.1);
   --background: rgb(15, 15, 15);
   --red: #cb5355;
   --white: #ffffff;
   --blue: #255EEF;
+  --transition: all 0.3s ease;
 
   /* fonts */
   --font-main: "Nunito", sans-serif;
@@ -156,7 +159,7 @@ input {
     background-color: var(--green);
 }
 
-.orderManageSection {
+.orderManageSection-incoming, .orderManageSection-preparing, .orderManageSection-ready {
     display: grid;
     grid-template-columns: 300px 300px 300px 300px; 
     gap: 30px;
@@ -165,7 +168,7 @@ input {
     overflow-y: auto;
 }
 
-.orderManageSection::-webkit-scrollbar{
+.orderManageSection-incoming::-webkit-scrollbar{
     display: none;
 }
 
@@ -255,6 +258,10 @@ input {
     border: none;
 }
 
+.btn:hover {
+    background-color: var(--orange-hover);
+}
+
 .more {
     width: 40px;
     height: 40px;
@@ -304,4 +311,8 @@ p{
     font-size: small;
     font-weight: bold;
     color: var(--ash-light);
+}
+
+.hidden {
+    display: none;
 }
