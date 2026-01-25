@@ -55,36 +55,40 @@
 
     <div class="relative-content">
       <!-- Main Navigation Bar -->
-      <div style="position: relative; z-index: 10">
-        <header class="glass">
-          <div class="container nav-wrapper">
-            <!-- Logo (UPDATE the href based on your location) -->
-            <a
-              href="index.html"
-              class="logo"
-              style="text-decoration: none; color: inherit"
-            >
-              <span class="material-symbols-outlined">all_inclusive</span>
-              <h2>QuickBite</h2>
-            </a>
-
-            <!-- Navigation Links (UPDATE the href paths based on your location) -->
-            <nav>
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../Menu/manu_final.html">Menu</a></li>
-                <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
-              </ul>
-            </nav>
-
-            <!-- Nav Actions: Order Button + User Profile -->
-            <div class="nav-actions" id="nav-actions">
-              <button class="btn-order">Order Now</button>
-              <div id="nav-profile-slot"></div>
-            </div>
+      <header
+        class="glass"
+        style="
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 50;
+          padding: 15px 0;
+        "
+      >
+        <div class="container nav-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
           </div>
-        </header>
-      </div>
+
+          <!-- Navigation Links -->
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Menu/manu_final.html">Menu</a></li>
+              <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+
+          <!-- Nav Actions: Order Button + User Profile -->
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
 
       <main class="container py-10">
         <div class="mb-8">
@@ -298,15 +302,18 @@
     <div class="mobile-cart glass">
       <div class="cart-info">
         <span class="material-symbols-outlined text-primary">shopping_bag</span>
-        <span class="font-bold">3 Items</span>
+        <span class="font-bold">0 Items</span>
       </div>
       <div class="divider"></div>
       <div class="cart-total">
-        <span class="text-muted">Total: <b>Rs. 2,250</b></span>
+        <span class="text-muted">Total: <b>$0.00</b></span>
         <button class="btn-checkout">Checkout</button>
       </div>
     </div>
 
     <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
   </body>
 </html>

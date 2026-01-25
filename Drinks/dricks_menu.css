@@ -20,6 +20,7 @@ body {
   color: white;
   font-family: "Plus Jakarta Sans", sans-serif;
   overflow-x: hidden;
+  padding-top: 80px;
 }
 .bg-glow-container {
   position: fixed;
@@ -48,6 +49,26 @@ body {
 .relative-content {
   position: relative;
   z-index: 10;
+}
+
+/* Header Styling */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 50 !important;
+  width: 100vw !important;
+  padding: 15px 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.nav-wrapper {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
 }
 
 /* Navigation & Glass */
@@ -220,31 +241,4 @@ body {
   transform: scale(1.02);
 }
 
-/* Mobile Cart Summary */
-.mobile-cart {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 12px 24px;
-  border-radius: 50px;
-  z-index: 100;
-}
-.divider {
-  width: 1px;
-  height: 24px;
-  background: var(--glass-border);
-}
-.btn-checkout {
-  background: var(--primary);
-  border: none;
-  padding: 6px 16px;
-  border-radius: 20px;
-  color: white;
-  font-weight: 700;
-  margin-left: 12px;
-  cursor: pointer;
-}
+/* Mobile Cart styling is defined in ../style.css for consistency across all pages */
