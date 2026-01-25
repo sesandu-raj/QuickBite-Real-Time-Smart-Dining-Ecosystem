@@ -6,41 +6,44 @@ function initializeQuickBite() {
   const userName = localStorage.getItem("customerName");
   const navContainer = document.getElementById("nav-actions");
 
-  // Only proceed if a table number exists in the URL
-  if (tableNumber) {
-    localStorage.setItem("assignedTable", tableNumber);
+  // ALWAYS check if user has a saved name in localStorage
+  if (userName) {
+    // User has a name saved - show their profile circle on ANY page
+    updateNavbarProfile(userName);
 
-    if (!userName) {
-      // 1. Show the custom glass modal
-      const overlay = document.getElementById("custom-prompt-overlay");
-      const tableDisplay = document.getElementById("prompt-table-display");
-      const confirmBtn = document.getElementById("confirm-name-btn");
-
-      if (overlay && tableDisplay) {
-        tableDisplay.innerText = `Table ${tableNumber}`;
-        overlay.style.display = "flex"; // Reveal the professional glass modal
-      }
-
-      // 2. Handle the "Start Dining" button click
-      confirmBtn.onclick = function () {
-        const input = document.getElementById("custom-name-input");
-        const enteredName = input.value.trim() || "Guest";
-
-        // Save to storage and hide modal
-        localStorage.setItem("customerName", enteredName);
-        overlay.style.display = "none";
-
-        // Trigger UI updates
-        updateNavbarProfile(enteredName);
-        showPersonalizedGreeting(enteredName, tableNumber);
-      };
-    } else {
-      // User is already "logged in", update UI immediately
-      updateNavbarProfile(userName);
+    // If on a table page with query param, also show greeting
+    if (tableNumber) {
+      localStorage.setItem("assignedTable", tableNumber);
       showPersonalizedGreeting(userName, tableNumber);
     }
+  } else if (tableNumber) {
+    // New QR code scan - show modal to get name
+    localStorage.setItem("assignedTable", tableNumber);
+
+    const overlay = document.getElementById("custom-prompt-overlay");
+    const tableDisplay = document.getElementById("prompt-table-display");
+    const confirmBtn = document.getElementById("confirm-name-btn");
+
+    if (overlay && tableDisplay) {
+      tableDisplay.innerText = `Table ${tableNumber}`;
+      overlay.style.display = "flex";
+    }
+
+    // Handle the "Start Dining" button click
+    confirmBtn.onclick = function () {
+      const input = document.getElementById("custom-name-input");
+      const enteredName = input.value.trim() || "Guest";
+
+      // Save to storage and hide modal
+      localStorage.setItem("customerName", enteredName);
+      overlay.style.display = "none";
+
+      // Trigger UI updates
+      updateNavbarProfile(enteredName);
+      showPersonalizedGreeting(enteredName, tableNumber);
+    };
   } else {
-    // Normal visit: ensure the navbar is in its default state
+    // No saved name and no query param - show default navbar
     if (navContainer) {
       navContainer.classList.remove("has-user");
     }

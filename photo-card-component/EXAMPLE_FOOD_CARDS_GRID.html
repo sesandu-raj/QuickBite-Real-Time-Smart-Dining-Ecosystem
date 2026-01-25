@@ -1,0 +1,122 @@
+<!-- 
+COMPLETE EXAMPLE: Food Menu Section with Multiple Cards
+Shows how to use food-card components in a grid
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Menu | QuickBite</title>
+
+    <!-- Required Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Include navbar here (see navbar-component folder) -->
+
+    <main class="container">
+      <!-- SECTION TITLE -->
+      <section class="menu-section">
+        <div class="section-title">
+          <h2>Seasonal Offers</h2>
+          <p style="color: var(--text-muted)">
+            Limited time flavors to celebrate the season.
+          </p>
+        </div>
+
+        <!-- FOOD CARDS GRID -->
+        <div class="grid-3">
+          <!-- CARD 1: Maple Spice Latte -->
+          <div class="food-card glass animate-on-scroll">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="card-content">
+              <div style="display: flex; justify-content: space-between">
+                <h3>Maple Spice Latte</h3>
+                <span class="price">$5.50</span>
+              </div>
+              <p>
+                Rich espresso blended with pure maple syrup and a hint of warm
+                cinnamon bark.
+              </p>
+              <button class="btn-order" style="width: 100%">
+                Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 2: Harvest Energy Bowl -->
+          <div class="food-card glass animate-on-scroll">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="card-content">
+              <div style="display: flex; justify-content: space-between">
+                <h3>Harvest Energy Bowl</h3>
+                <span class="price">$12.00</span>
+              </div>
+              <p>
+                Roasted squash, quinoa, kale, and toasted pepitas with zesty
+                ginger-tahini dressing.
+              </p>
+              <button class="btn-order" style="width: 100%">
+                Add to Order
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 3: Spiced Chai Scone -->
+          <div class="food-card glass animate-on-scroll">
+            <div
+              class="card-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="card-content">
+              <div style="display: flex; justify-content: space-between">
+                <h3>Spiced Chai Scone</h3>
+                <span class="price">$4.25</span>
+              </div>
+              <p>
+                Flaky, buttery pastry infused with house-made masala chai spice
+                and honey glaze.
+              </p>
+              <button class="btn-order" style="width: 100%">
+                Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- 
+IMPORTANT NOTES:
+1. The .grid-3 class automatically creates 3-column layout
+2. .animate-on-scroll adds scroll animations (requires initScrollAnimations in script.js)
+3. .glass class adds the glass morphism effect
+4. To add more cards: copy entire food-card div and change content
+5. Update prices and descriptions for your menu
+-->

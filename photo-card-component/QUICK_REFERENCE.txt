@@ -1,0 +1,190 @@
+# 📸 Photo Card Component - Quick Reference
+
+## 3 Card Types Available
+
+### 1️⃣ FOOD CARD (Menu Items)
+```html
+<div class="food-card glass">
+  <div class="card-img" style="background-image: url('IMAGE')"></div>
+  <div class="card-content">
+    <h3>Dish Name</h3>
+    <span class="price">$9.99</span>
+    <p>Description</p>
+    <button class="btn-order" style="width: 100%">Add to Order</button>
+  </div>
+</div>
+```
+**Where:** Menu pages  
+**File:** `FOOD_CARD.html`  
+**Container:** `<div class="grid-3">`
+
+---
+
+### 2️⃣ TEAM CARD (Staff/Members)
+```html
+<div class="team-card glass">
+  <div class="portrait-wrapper">
+    <div class="portrait" style="background-image: url('PHOTO')"></div>
+    <div class="role-icon">
+      <span class="material-symbols-outlined">icon</span>
+    </div>
+  </div>
+  <h3>Name</h3>
+  <span class="role-title">Job Title</span>
+  <p class="quote">"Quote here"</p>
+</div>
+```
+**Where:** About/Team pages  
+**File:** `TEAM_CARD.html`  
+**Container:** `<div class="team-grid">`
+
+---
+
+### 3️⃣ CATEGORY CARD (Menu Categories)
+```html
+<div class="category-card glass" onclick="location.href='page.html'">
+  <div class="cat-img" style="background-image: url('IMAGE')"></div>
+  <div class="cat-info">
+    <div class="cat-header">
+      <span class="material-symbols-outlined">icon</span>
+      <h3>Category</h3>
+    </div>
+    <p>Description</p>
+  </div>
+</div>
+```
+**Where:** Menu browse pages  
+**File:** `CATEGORY_CARD.html`  
+**Container:** `<div class="category-grid">`
+
+---
+
+## Quick Customization Checklist
+
+```
+For Any Card:
+[ ] Update background-image URL
+[ ] Change title/name text
+[ ] Update description/quote
+[ ] Change icon (if applicable)
+[ ] Update price (if applicable)
+[ ] Add onclick link (if clickable)
+[ ] Check image size (800x600+ recommended)
+[ ] Test on mobile
+```
+
+---
+
+## Essential Classes
+
+| Class | Use |
+|-------|-----|
+| `.grid-3` | 3-column food cards |
+| `.team-grid` | Team member grid |
+| `.category-grid` | Category grid |
+| `.glass` | Glass effect |
+| `.animate-on-scroll` | Fade-in animation |
+| `.badge-limited` | Limited badge |
+
+---
+
+## Copy-Paste Template
+
+### Single Food Card
+```html
+<div class="food-card glass animate-on-scroll">
+  <div class="card-img" style="background-image: url('https://YOUR_IMAGE_URL')"></div>
+  <div class="card-content">
+    <div style="display: flex; justify-content: space-between">
+      <h3>YOUR ITEM NAME</h3>
+      <span class="price">$X.XX</span>
+    </div>
+    <p>YOUR DESCRIPTION HERE</p>
+    <button class="btn-order" style="width: 100%">Add to Order</button>
+  </div>
+</div>
+```
+
+### Single Team Card
+```html
+<div class="team-card glass animate-on-scroll">
+  <div class="portrait-wrapper">
+    <div class="portrait" style="background-image: url('https://YOUR_PHOTO_URL')"></div>
+    <div class="role-icon">
+      <span class="material-symbols-outlined">YOUR_ICON</span>
+    </div>
+  </div>
+  <h3>NAME HERE</h3>
+  <span class="role-title">JOB TITLE</span>
+  <p class="quote">"THEIR QUOTE HERE"</p>
+</div>
+```
+
+### Single Category Card
+```html
+<div class="category-card glass" onclick="location.href = 'your-page.html'">
+  <div class="cat-img" style="background-image: url('https://YOUR_IMAGE_URL')"></div>
+  <div class="cat-info">
+    <div class="cat-header">
+      <span class="material-symbols-outlined">YOUR_ICON</span>
+      <h3>CATEGORY NAME</h3>
+    </div>
+    <p>YOUR DESCRIPTION</p>
+  </div>
+</div>
+```
+
+---
+
+## Icon Examples (Material Symbols)
+
+| Icon Name | Use |
+|-----------|-----|
+| `lunch_dining` | Main courses |
+| `local_cafe` | Coffee/Drinks |
+| `cake` | Desserts |
+| `restaurant` | Appetizers |
+| `coffee` | Barista |
+| `palette` | Artist |
+| `schedule` | Operations |
+| `groups` | Community |
+| `shopping_cart` | Cart |
+| `star` | Rating |
+
+---
+
+## Required in `<head>`
+
+```html
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+```
+
+---
+
+## Required in `<body>` (before `</body>`)
+
+```html
+<script src="script.js"></script>
+```
+
+---
+
+## Full Examples Available
+
+📁 View complete working examples:
+- `EXAMPLE_FOOD_CARDS_GRID.html` - Full menu page
+- `EXAMPLE_TEAM_CARDS_GRID.html` - Full team page
+- `EXAMPLE_CATEGORY_CARDS_GRID.html` - Full browse page
+
+---
+
+## Free Image Sources
+
+- 🔗 **Unsplash**: unsplash.com
+- 🔗 **Pexels**: pexels.com
+- 🔗 **Pixabay**: pixabay.com
+
+---
+
+**Need help? See USAGE_GUIDE.md for detailed documentation!**

@@ -1,0 +1,98 @@
+<!-- 
+================================================================================
+QUICKBITE REUSABLE NAVBAR COMPONENT
+Copy and paste this entire section into your HTML file
+================================================================================
+IMPORTANT: Update the href paths based on your file location!
+- If your page is in root folder: use "index.html", "menu.html", etc.
+- If your page is in /Menu folder: use "../index.html", "../Menu/menu.html", etc.
+- If your page is in /My_Orders folder: use "../index.html", "../Menu/menu.html", etc.
+================================================================================
+-->
+
+<!-- STEP 1: Add this in the <head> section of your HTML -->
+<link rel="stylesheet" href="style.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- STEP 2: Add this in the <body> section (before closing </body>) -->
+<script src="script.js"></script>
+
+<!-- ========================= NAVBAR HTML MARKUP ========================= -->
+
+<!-- Background Orbs (Optional - but recommended for consistency) -->
+<div class="bg-glow-container">
+  <div class="orb orb-primary"></div>
+  <div class="orb orb-amber"></div>
+</div>
+
+<!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+<div id="custom-prompt-overlay" class="prompt-overlay">
+  <div class="prompt-card glass">
+    <div class="prompt-icon">
+      <span class="material-symbols-outlined">person_pin</span>
+    </div>
+    <h2>Welcome!</h2>
+    <p>
+      Please enter your name to personalize your experience at
+      <span
+        id="prompt-table-display"
+        style="color: var(--primary); font-weight: 800"
+      ></span>
+      .
+    </p>
+
+    <div class="input-group">
+      <input
+        type="text"
+        id="custom-name-input"
+        placeholder="Your Name..."
+        autocomplete="off"
+      />
+    </div>
+
+    <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+      Start Dining
+    </button>
+  </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<div style="position: relative; z-index: 10">
+  <header class="glass">
+    <div class="container nav-wrapper">
+      <!-- Logo (UPDATE the href based on your location) -->
+      <a
+        href="index.html"
+        class="logo"
+        style="text-decoration: none; color: inherit"
+      >
+        <span class="material-symbols-outlined">all_inclusive</span>
+        <h2>QuickBite</h2>
+      </a>
+
+      <!-- Navigation Links (UPDATE the href paths based on your location) -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Menu/manu_final.html">Menu</a></li>
+          <li><a href="My_Orders/my_orders.html">My Orders</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions: Order Button + User Profile -->
+      <div class="nav-actions" id="nav-actions">
+        <button class="btn-order">Order Now</button>
+        <div id="nav-profile-slot"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- ========================= END OF NAVBAR ========================= -->

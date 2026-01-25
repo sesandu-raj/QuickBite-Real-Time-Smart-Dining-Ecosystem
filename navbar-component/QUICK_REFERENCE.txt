@@ -1,0 +1,98 @@
+# 🚀 QuickBite Navbar - Quick Copy/Paste Guide
+
+## For Your Team Members
+
+Just 3 simple steps:
+
+### ✅ Step 1: Choose Your Folder Type
+- **Root folder** (index.html, contact.html, etc.) → Use `EXAMPLE_ROOT_FOLDER.html`
+- **Menu folder** (manu_final.html, category-*.html) → Use `EXAMPLE_MENU_FOLDER.html`  
+- **My Orders folder** (my_orders.html, tracking.html) → Use `EXAMPLE_MY_ORDERS_FOLDER.html`
+
+### ✅ Step 2: Copy the Navbar Code
+Open the matching example file and copy the **entire HTML** into your page
+
+### ✅ Step 3: Update Active Link
+Change the active nav link to match your current page:
+
+```html
+<!-- If you're on Menu page -->
+<li><a href="manu_final.html" class="active">Menu</a></li>
+
+<!-- If you're on Home page -->
+<li><a href="index.html" class="active">Home</a></li>
+
+<!-- If you're on My Orders page -->
+<li><a href="my_orders.html" class="active">My Orders</a></li>
+```
+
+---
+
+## 🎨 What You Get Automatically
+
+With just this navbar code, your page will have:
+
+✅ **Visual Consistency**
+- Same color scheme (primary orange #f48c25)
+- Same fonts (Plus Jakarta Sans)
+- Glass morphism effects
+- Responsive design
+
+✅ **Full Functionality**
+- QR code table detection (`?table=6`)
+- User name prompt modal
+- User profile circle with initial
+- localStorage integration
+- Greeting based on time of day
+- Order button
+
+✅ **Team Benefits**
+- All pages look the same
+- All pages work the same
+- One source of truth for navbar (`style.css` & `script.js`)
+- Easy to update later
+
+---
+
+## 📋 File Reference
+
+| File | What It Does |
+|------|--------------|
+| `NAVBAR_CODE.html` | Raw code to copy (with instructions) |
+| `USAGE_GUIDE.md` | Detailed guide (this document) |
+| `EXAMPLE_ROOT_FOLDER.html` | Example for root folder pages |
+| `EXAMPLE_MENU_FOLDER.html` | Example for /Menu folder pages |
+| `EXAMPLE_MY_ORDERS_FOLDER.html` | Example for /My_Orders folder pages |
+
+---
+
+## 🔑 Key Points to Remember
+
+1. **Always use relative paths** - `../` goes up one folder
+2. **Update active links** - Current page link gets `class="active"`
+3. **Keep same CSS/JS** - All pages use same `style.css` and `script.js`
+4. **Don't edit navbar CSS** - It's in the main `style.css`
+5. **Don't edit navbar JS** - It's in the main `script.js`
+
+---
+
+## ⚡ Quick Testing
+
+After copying navbar, test:
+1. Click links - should navigate correctly
+2. Visit `page.html?table=6` - should show name modal
+3. Enter name and submit - profile should appear
+4. Refresh page - name should still show (localStorage)
+
+---
+
+## 💡 Pro Tips
+
+- **Keep a template file** - Save one example file to use as reference
+- **Copy the whole structure** - Don't split the navbar sections
+- **Match the path pattern** - If unsure, look at existing pages
+- **Ask on Slack** - If something breaks, share the error message
+
+---
+
+**Questions? Check USAGE_GUIDE.md for detailed help!**

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Menu | The Nocturnal Bean</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="menu_final.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
+
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span
+          >.
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <div style="position: relative; z-index: 10">
+      <header class="glass">
+        <div class="container nav-wrapper">
+          <a
+            href="../index.html"
+            class="logo"
+            style="
+              text-decoration: none;
+              color: inherit;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="manu_final.html" class="active">Menu</a></li>
+              <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="menu-hero">
+          <h1>
+            Fuel Your <span class="gradient-text">Late-Night Sessions</span>
+          </h1>
+          <p>Serving the brightest minds during the darkest hours.</p>
+
+          <div class="search-container glass">
+            <span class="material-symbols-outlined">search</span>
+            <input
+              type="text"
+              placeholder="Search for coffee, burgers, or snacks..."
+            />
+          </div>
+        </section>
+
+        <div class="section-title">
+          <h2>Browse Categories</h2>
+        </div>
+
+        <div class="category-grid">
+          <div
+            class="category-card glass"
+            onclick="location.href = 'category-main.html'"
+          >
+            <div
+              class="cat-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="cat-info">
+              <div class="cat-header">
+                <span class="material-symbols-outlined">lunch_dining</span>
+                <h3>Main Course</h3>
+              </div>
+              <p>Hearty meals to keep you going through any all-nighter.</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card glass"
+            onclick="location.href = 'category-drinks.html'"
+          >
+            <div
+              class="cat-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="cat-info">
+              <div class="cat-header">
+                <span class="material-symbols-outlined">local_cafe</span>
+                <h3>Drinks</h3>
+              </div>
+              <p>
+                High-caffeine kicks and refreshing chilled sips for clarity.
+              </p>
+            </div>
+          </div>
+
+          <div class="category-card glass">
+            <div
+              class="cat-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&quot;);
+              "
+            >
+              <span class="badge-limited">Limited</span>
+            </div>
+            <div class="cat-info">
+              <div class="cat-header">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <h3>Seasonal Offers</h3>
+              </div>
+              <p>Limited-time student specials for exam seasons.</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card glass"
+            onclick="location.href = 'category-appetizers.html'"
+          >
+            <div
+              class="cat-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="cat-info">
+              <div class="cat-header">
+                <span class="material-symbols-outlined">restaurant</span>
+                <h3>Appetizers</h3>
+              </div>
+              <p>Tasty bites and starters to kick off your cravings.</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card glass"
+            onclick="location.href = 'category-desserts.html'"
+          >
+            <div
+              class="cat-img"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&quot;);
+              "
+            ></div>
+            <div class="cat-info">
+              <div class="cat-header">
+                <span class="material-symbols-outlined">cake</span>
+                <h3>Desserts</h3>
+              </div>
+              <p>Sweet treats to satisfy your midnight cravings.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <div class="logo">
+                <span class="material-symbols-outlined">all_inclusive</span>
+                <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+              </div>
+              <p>
+                Dedicated to the night owls, the morning birds, and everyone in
+                between. We are your 24/7 sanctuary for productivity.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >public</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >share</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >mail</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <div>
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Menu/menu.html">Menu</a></li>
+                <li><a href="My_Orders/my_orders.html">My Orders</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-heading">Visit Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span
+                    >123 University Ave,<br />Campus District, NY 10012</span
+                  >
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span
+                    >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                    Hour</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 QuickBite. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script src="menu_final.js"></script>
+  </body>
+</html>

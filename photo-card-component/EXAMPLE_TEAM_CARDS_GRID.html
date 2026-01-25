@@ -1,0 +1,144 @@
+<!-- 
+COMPLETE EXAMPLE: Team Member Section with Multiple Cards
+Shows how to use team-card components in a grid
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Team | QuickBite</title>
+
+    <!-- Required Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Include navbar here (see navbar-component folder) -->
+
+    <main class="container">
+      <!-- SECTION TITLE -->
+      <section class="team-section">
+        <div class="section-title">
+          <h2>Meet our Team</h2>
+          <p style="color: var(--text-muted)">
+            The experts keeping your brain fueled around the clock.
+          </p>
+        </div>
+
+        <!-- TEAM CARDS GRID -->
+        <div class="team-grid">
+          <!-- CARD 1: Alex Chen -->
+          <div class="team-card glass animate-on-scroll">
+            <div class="portrait-wrapper">
+              <div
+                class="portrait"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500&quot;);
+                "
+              ></div>
+              <div class="role-icon">
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >coffee</span
+                >
+              </div>
+            </div>
+            <h3>Alex Chen</h3>
+            <span class="role-title">Head Barista</span>
+            <p class="quote">
+              "Master of the triple-shot espresso and mid-term motivation."
+            </p>
+          </div>
+
+          <!-- CARD 2: Sarah Jenkins -->
+          <div class="team-card glass animate-on-scroll">
+            <div class="portrait-wrapper">
+              <div
+                class="portrait"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=500&quot;);
+                "
+              ></div>
+              <div class="role-icon">
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >schedule</span
+                >
+              </div>
+            </div>
+            <h3>Sarah Jenkins</h3>
+            <span class="role-title">Operations Lead</span>
+            <p class="quote">
+              "Ensuring our 24/7 service stays seamless and the vibes stay
+              chill."
+            </p>
+          </div>
+
+          <!-- CARD 3: Jordan Taylor -->
+          <div class="team-card glass animate-on-scroll">
+            <div class="portrait-wrapper">
+              <div
+                class="portrait"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500&quot;);
+                "
+              ></div>
+              <div class="role-icon">
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >palette</span
+                >
+              </div>
+            </div>
+            <h3>Jordan Taylor</h3>
+            <span class="role-title">Latte Artist</span>
+            <p class="quote">
+              "Your oat milk latte is my canvas. Crafting fuel for your brain."
+            </p>
+          </div>
+
+          <!-- CARD 4: Mia Rodriguez -->
+          <div class="team-card glass animate-on-scroll">
+            <div class="portrait-wrapper">
+              <div
+                class="portrait"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=500&quot;);
+                "
+              ></div>
+              <div class="role-icon">
+                <span class="material-symbols-outlined" style="font-size: 18px"
+                  >groups</span
+                >
+              </div>
+            </div>
+            <h3>Mia Rodriguez</h3>
+            <span class="role-title">Community Lead</span>
+            <p class="quote">
+              "Ensuring every student feels at home, whether it's 3 AM or 3 PM."
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- 
+IMPORTANT NOTES:
+1. The .team-grid class automatically creates responsive grid
+2. .animate-on-scroll adds scroll animations
+3. .glass class adds glass morphism effect
+4. Portrait has grayscale filter, turns color on hover
+5. role-icon shows job icon with orange background
+6. To add more cards: copy entire team-card div and update content
+7. Change icon inside role-icon span based on job role
+-->
