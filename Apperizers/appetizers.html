@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusBites - Appetizers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styleappetizers.css">
+    <link rel="stylesheet" href="../style.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
+
+    <!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span
+          >.
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="glass" style="width: 100vw; position: fixed; top: 0; left: 0; z-index: 50; padding: 15px 0;">
+      <div class="container nav-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Menu/manu_final.html">Menu</a></li>
+              <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+
+          <!-- Nav Actions: Order Button + User Profile -->
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
+
+    <div class="relative-content">
+
+    <div class="breadcrumb" style="margin-top: 80px;">Home >  <span style="color: var(--primary-orange);">Appetizers</span></div>
+
+    <section class="title-section">
+        <h1>Appetizers</h1>
+        <p>Start your meal with our student-favorite small plates</p>
+    </section>
+
+   <ul class="filters">
+    <li class="active" data-filter="all">All Items</li>
+    <li data-filter="vegan">Vegetarian</li>
+    <li data-filter="spicy">Spicy</li>
+    <li data-filter="best">Popular</li>
+</ul>
+
+    <main class="menu-grid">
+        <article class="card" data-category="best">
+            <span class="badge best-sellar" >Best Seller</span>
+            <img src="gourmet-truffle-fries-plate-crispy-fries-topped-arugula-shaved-parmesan-creamy-sauce-403834741.webp" alt="Truffle-Fries" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Truffle Fries</h3>
+                    <span class="price">$6.50</span>
+                </div>
+                <p class="description">Hand cut golden fries tossed in priemium truffle oil and grated parmesan</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="card"  data-category="spicy,best">
+            <span class="badge spicy">Spicy</span>
+            <img src="download.jpg" alt="crispy-calamari" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Crispy Calamari</h3>
+                    <span class="price">$9.00</span>
+                </div>
+                <p class="description">Lightly breaded squidrings served with a side of spicy house marinara</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+
+        <article class="card" data-category="best">
+            <span class="badge best-sellar" >Best Seller</span>
+            <img src="download (1).jpg" alt="mozzarella-sticks" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Mozzarella Sticks</h3>
+                    <span class="price">$7.50</span>
+                </div>
+                <p class="description">Six gooey, herb-crusted sticks served with our signature zesty diping sauce</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+             <article class="card" data-category="vegan,best">
+            <span class="badge vegan">Vegan</span>
+            <img src="images.jpg" alt="garlic-knots" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Garlic Knots</h3>
+                    <span class="price">$5.00</span>
+                </div>
+                <p class="description">Freshly baked dough Knots brushed with roasted garlic butter and sea salt</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+             <article class="card" data-category="best">
+            <img src="images (1).jpg" alt="Classic Bruschetta" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Classic Bruschetta</h3>
+                    <span class="price">$7.50</span>
+                </div>
+                <p class="description">Toasted ciabatta topped with vine-ripened tomatoes, basil, and balsamic glaze</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+            </article>
+             <article class="card" data-category="spicy,best">
+                <span class="badge spicy" >Spicy</span>
+            <img src="images (2).jpg" alt="Baffalo-Sliders" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Baffalo Sliders</h3>
+                    <span class="price">$10.50</span>
+                </div>
+                <p class="description">Juicy mini chicken sliders tossed in spicy buffalo sauce, topped with creamy dressing</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+             <article class="card" data-category="vegan">
+            <span class="badge vegan">Vegan</span>
+            <img src="download (3).jpg" alt="garlic-knots" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Veg Spring Rolls</h3>
+                    <span class="price">$1.00</span>
+                </div>
+                <p class="description">Crispy rolls filled with seasoned fresh vegetables, served hot with dipping sauce</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+             <article class="card" data-category="vegan">
+            <span class="badge vegan">Vegan</span>
+            <img src="download (2).jpg" alt="paneer-tikka" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Paneer Tikka</h3>
+                    <span class="price">$3.00</span>
+                </div>
+                <p class="description">Soft paneer cubes marinated in spices and grilled to perfection, served hot.</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+                     <article class="card" data-category="spicy">
+            <span class="badge spicy">Spicy</span>
+            <img src="241152-fried-chicken-wings-ddmfs-hero-1x2-1261-7201cc37727446adb6698c269585d5a0.jpg" alt="chicken-wings" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Chicken Wings</h3>
+                    <span class="price">$5.00</span>
+                </div>
+                <p class="description">Juicy chicken wings marinated in spices and fried or grilled until crispy and flavorful.</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+               <article class="card" data-category="best">
+            <span class="badge best-sellar">Best Seller</span>
+            <img src="images (3).jpg" alt="prawn-tempura" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>prawn tempura</h3>
+                    <span class="price">$3.50</span>
+                </div>
+                <p class="description">Crispy, light-battered prawns fried to golden perfection, served hot.</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+             <article class="card" data-category="spicy">
+            <span class="badge best-sellar">Best Seller</span>
+            <img src="fish-cutlet.jpg" alt="fish-cutlet" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Fish Cutlet</h3>
+                    <span class="price">$2.50</span>
+                </div>
+                <p class="description">Deep-fried fish cutlets packed with aromatic spices, crispy outside and juicy inside.</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+            <article class="card" data-category="vegan">
+            <span class="badge vegan">Vegan</span>
+            <img src="download (4).jpg" alt="onion-rings" class="card-img">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Onion Rings</h3>
+                    <span class="price">$0.50</span>
+                </div>
+                <p class="description">Golden fried onion rings, crispy and delicious.</p>
+                <div class="quantity-selector">
+                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                </div>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            </div>
+        </article>
+        <script>
+    let cartCount = 0;
+
+    // Update cart count UI
+    function updateCartCount() {
+        document.querySelector('.cart-count').textContent = cartCount;
+    }
+
+    // Quantity buttons (+ / -)
+    document.querySelectorAll('.quantity-selector').forEach(selector => {
+        const minus = selector.children[0];
+        const quantity = selector.children[1];
+        const plus = selector.children[2];
+
+        minus.addEventListener('click', () => {
+            let value = parseInt(quantity.textContent);
+            if (value > 1) {
+                quantity.textContent = value - 1;
+            }
+        });
+
+        plus.addEventListener('click', () => {
+            let value = parseInt(quantity.textContent);
+            quantity.textContent = value + 1;
+        });
+    });
+
+    // Add to cart button
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.card');
+            const name = card.querySelector('h3').textContent;
+            const qty = parseInt(card.querySelector('.quantity-selector span:nth-child(2)').textContent);
+
+            cartCount += qty;
+            updateCartCount();
+
+            alert(`${qty} × ${name} added to cart 🛒`);
+        });
+    });
+        const searchInput = document.querySelector('.search-bar');
+    const cards = document.querySelectorAll('.menu-grid .card');
+
+    searchInput.addEventListener('input', () => {
+        const searchText = searchInput.value.toLowerCase();
+
+        cards.forEach(card => {
+            const itemName = card.querySelector('h3').textContent.toLowerCase();
+            const itemDesc = card.querySelector('.description').textContent.toLowerCase();
+
+            if (itemName.includes(searchText) || itemDesc.includes(searchText)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+ const filterButtons = document.querySelectorAll('.filters li');
+const menuCards = document.querySelectorAll('.menu-grid .card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+
+        // Active state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        menuCards.forEach(card => {
+            const category = card.dataset.category || "";
+
+            if (filter === "all" || category.split(',').includes(filter)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
+</script>
+    </main>
+
+    <footer>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- COLUMN 1: Brand & Description -->
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-symbols-outlined">all_inclusive</span>
+          <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+        </div>
+        <p>
+          Dedicated to the night owls, the morning birds, and everyone in
+          between. We are your 24/7 sanctuary for productivity.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >public</span
+            ></a
+          >
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >share</span
+            ></a
+          >
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >mail</span
+            ></a
+          >
+        </div>
+      </div>
+
+      <!-- COLUMN 2: Quick Links -->
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Digital Menu</a></li>
+          <li><a href="#">Study Pod Booking</a></li>
+          <li><a href="#">Student Perks</a></li>
+          <li><a href="#">Rewards Program</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: Contact Info -->
+      <div>
+        <h4 class="footer-heading">Visit Us</h4>
+        <ul class="contact-info">
+          <li>
+            <span class="material-symbols-outlined">location_on</span>
+            <span>123 University Ave,<br />Campus District, NY 10012</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">schedule</span>
+            <span
+              >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every Hour</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+    <div class="footer-bottom">
+      <p>© 2026 QuickBite. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
+  </body>
+</html>
