@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Seasonal Offers | QuickBite</title>
+    <link rel="stylesheet" href="seasinal_offers.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background-dark font-display">
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div style="position: sticky; top: 0; z-index: 50;">
+      <header class="glass">
+        <div class="container nav-wrapper">
+          <!-- Logo (UPDATE the href based on your location) -->
+          <a
+            href="index.html"
+            class="logo"
+            style="text-decoration: none; color: inherit"
+          >
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </a>
+
+          <!-- Navigation Links (UPDATE the href paths based on your location) -->
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Menu/manu_final.html">Menu</a></li>
+              <li><a href="My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+
+          <!-- Nav Actions: Order Button + User Profile -->
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+        </div>
+      </header>
+    </div>
+
+    <div class="relative-content">
+      <main class="container py-8">
+        <div class="seasonal-hero glass">
+          <div class="hero-content">
+            <span class="badge-limited">Limited Availability</span>
+            <h1 class="hero-title">
+              Avurudu Harvest <br /><span class="gradient-text">Specials</span>
+            </h1>
+            <p class="hero-subtitle">
+              Celebrate the season with our exclusive traditional fusion
+              ingredients.
+            </p>
+            <button class="btn-primary">Explore Seasonal Menu</button>
+          </div>
+        </div>
+
+        <div id="custom-prompt-overlay" class="prompt-overlay">
+          <div class="prompt-card glass">
+            <div class="prompt-icon">
+              <span class="material-symbols-outlined">person_pin</span>
+            </div>
+            <h2>Welcome!</h2>
+            <p>
+              Please enter your name to personalize your experience at
+              <span
+                id="prompt-table-display"
+                style="color: var(--primary); font-weight: 800"
+              ></span>
+              .
+            </p>
+
+            <div class="input-group">
+              <input
+                type="text"
+                id="custom-name-input"
+                placeholder="Your Name..."
+                autocomplete="off"
+              />
+            </div>
+
+            <button
+              id="confirm-name-btn"
+              class="btn-primary"
+              style="width: 100%"
+            >
+              Start Dining
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-chips">
+          <button class="chip active">All Seasonal</button>
+          <button class="chip glass">
+            Vegan Friendly
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <button class="chip glass">
+            Nut Free <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <button class="chip glass">
+            Student Value
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+
+        <div class="grid-header">
+          <h3 class="section-title">
+            <span class="material-symbols-outlined text-primary"
+              >local_fire_department</span
+            >
+            Limited Time Favorites
+          </h3>
+          <p class="timer-text">
+            Ends in 12 days <span class="material-symbols-outlined">timer</span>
+          </p>
+        </div>
+
+        <div class="seasonal-grid">
+          <div class="seasonal-card glass">
+            <div class="card-badge">Special Offer</div>
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000"
+                alt="Narang Latte"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4>Narang Spiced Latte</h4>
+                <span class="price">Rs. 650</span>
+              </div>
+              <p class="card-description">
+                Local Narang zest infused with Ceylon cinnamon and creamy
+                steamed milk.
+              </p>
+              <div class="card-footer">
+                <div class="tags">
+                  <span class="tag">Warming</span>
+                  <span class="tag">Local Citrus</span>
+                </div>
+                <button class="btn-add-small">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="seasonal-card glass">
+            <div class="card-badge secondary">Chef's Choice</div>
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000"
+                alt="Kalu Pol Burger"
+              />
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h4>Kalu Pol Chicken Burger</h4>
+                <span class="price">Rs. 1150</span>
+              </div>
+              <p class="card-description">
+                Roasted coconut spiced chicken patty with caramelized onions and
+                pol sambol mayo.
+              </p>
+              <div class="card-footer">
+                <div class="tags">
+                  <span class="tag">Fusion</span>
+                  <span class="tag">Spicy</span>
+                </div>
+                <button class="btn-add-small">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-note glass">
+          <p>
+            <span class="text-primary font-bold">Student Note:</span> Seasonal
+            offers are available daily until sold out. Present your University
+            ID for an extra 10% off!
+          </p>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <!-- COLUMN 1: Brand & Description -->
+            <div class="footer-brand">
+              <div class="logo">
+                <span class="material-symbols-outlined">all_inclusive</span>
+                <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+              </div>
+              <p>
+                Dedicated to the night owls, the morning birds, and everyone in
+                between. We are your 24/7 sanctuary for productivity.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >public</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >share</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >mail</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <!-- COLUMN 2: Quick Links -->
+            <div>
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Digital Menu</a></li>
+                <li><a href="#">Study Pod Booking</a></li>
+                <li><a href="#">Student Perks</a></li>
+                <li><a href="#">Rewards Program</a></li>
+              </ul>
+            </div>
+
+            <!-- COLUMN 3: Contact Info -->
+            <div>
+              <h4 class="footer-heading">Visit Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span
+                    >123 University Ave,<br />Campus District, NY 10012</span
+                  >
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span
+                    >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                    Hour</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+          <div class="footer-bottom">
+            <p>© 2026 QuickBite. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="fab-container">
+      <button class="btn-fab">
+        <span class="material-symbols-outlined">shopping_basket</span>
+        <span>View Order</span>
+        <span class="fab-count">2</span>
+      </button>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
+  </body>
+</html>

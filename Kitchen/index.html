@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kitchen Live Orders</h1>
+      <div id="connection-status">Live Sync Active</div>
+    </header>
+
+    <main id="orders-container"></main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBxES9tk3bAFUu64JhDPLgHzPs5hUKLNvM",
+        authDomain: "resturant-cb358.firebaseapp.com",
+        projectId: "resturant-cb358",
+        storageBucket: "resturant-cb358.firebasestorage.app",
+        messagingSenderId: "806584741054",
+        appId: "1:806584741054:web:314fb1c462eba54c2cc2ef",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
