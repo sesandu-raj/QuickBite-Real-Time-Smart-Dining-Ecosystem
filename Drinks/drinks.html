@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Drinks Menu | QuickBite</title>
+    <link rel="stylesheet" href="dricks_menu.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background-dark font-display">
+    <!-- Background Orbs (Optional - but recommended for consistency) -->
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
+
+    <!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span>
+          .
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <div class="relative-content">
+      <!-- Main Navigation Bar -->
+      <div style="position: relative; z-index: 10">
+        <header class="glass">
+          <div class="container nav-wrapper">
+            <!-- Logo (UPDATE the href based on your location) -->
+            <a
+              href="index.html"
+              class="logo"
+              style="text-decoration: none; color: inherit"
+            >
+              <span class="material-symbols-outlined">all_inclusive</span>
+              <h2>QuickBite</h2>
+            </a>
+
+            <!-- Navigation Links (UPDATE the href paths based on your location) -->
+            <nav>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Menu/manu_final.html">Menu</a></li>
+                <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+              </ul>
+            </nav>
+
+            <!-- Nav Actions: Order Button + User Profile -->
+            <div class="nav-actions" id="nav-actions">
+              <button class="btn-order">Order Now</button>
+              <div id="nav-profile-slot"></div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <main class="container py-10">
+        <div class="mb-8">
+          <h1 class="page-title">Drinks Menu</h1>
+          <p class="text-muted">
+            Premium brews and tropical refreshers for your study session.
+          </p>
+        </div>
+
+        <div class="filter-chips">
+          <button class="chip active">
+            <span class="material-symbols-outlined">local_cafe</span> Coffee
+          </button>
+          <button class="chip glass">
+            <span class="material-symbols-outlined">emoji_food_beverage</span>
+            Ceylon Teas
+          </button>
+          <button class="chip glass">
+            <span class="material-symbols-outlined">liquor</span> Mocktails
+          </button>
+          <button class="chip glass">
+            <span class="material-symbols-outlined">water_drop</span> Refreshers
+          </button>
+        </div>
+
+        <section class="mb-12">
+          <div class="grid-header">
+            <h2 class="section-subtitle">
+              <span class="material-symbols-outlined text-primary"
+                >coffee_maker</span
+              >
+              Signature Coffee
+            </h2>
+            <span class="item-count">8 Items</span>
+          </div>
+
+          <div class="drinks-grid">
+            <div class="drink-card glass">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1000"
+                  alt="Iced Oat Latte"
+                />
+                <span class="badge-tag">Best Seller</span>
+              </div>
+              <div class="card-body">
+                <div class="title-row">
+                  <h3>Iced Oat Latte</h3>
+                  <span class="price">Rs. 750</span>
+                </div>
+                <p class="desc">
+                  Double espresso, creamy oat milk, and a touch of vanilla bean.
+                </p>
+                <button class="btn-add-cart">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="drink-card glass">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000"
+                  alt="Nitro Cold Brew"
+                />
+              </div>
+              <div class="card-body">
+                <div class="title-row">
+                  <h3>Nitro Cold Brew</h3>
+                  <span class="price">Rs. 850</span>
+                </div>
+                <p class="desc">
+                  Velvety smooth, nitrogen-infused cold brew coffee.
+                </p>
+                <button class="btn-add-cart secondary">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-12">
+          <div class="grid-header">
+            <h2 class="section-subtitle">
+              <span class="material-symbols-outlined text-primary"
+                >local_bar</span
+              >
+              Artisan Mocktails
+            </h2>
+            <span class="item-count">5 Items</span>
+          </div>
+
+          <div class="drinks-grid">
+            <div class="drink-card glass">
+              <div class="card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=1000"
+                  alt="Passion Chill"
+                />
+                <span class="badge-tag secondary">New</span>
+              </div>
+              <div class="card-body">
+                <div class="title-row">
+                  <h3>Passion Chill</h3>
+                  <span class="price">Rs. 650</span>
+                </div>
+                <p class="desc">
+                  Fresh passion fruit nectar, ginger ale, and lime zest.
+                </p>
+                <button class="btn-add-cart secondary">
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <!-- COLUMN 1: Brand & Description -->
+            <div class="footer-brand">
+              <div class="logo">
+                <span class="material-symbols-outlined">all_inclusive</span>
+                <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+              </div>
+              <p>
+                Dedicated to the night owls, the morning birds, and everyone in
+                between. We are your 24/7 sanctuary for productivity.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >public</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >share</span
+                  ></a
+                >
+                <a href="#" class="social-icon"
+                  ><span
+                    class="material-symbols-outlined"
+                    style="font-size: 18px"
+                    >mail</span
+                  ></a
+                >
+              </div>
+            </div>
+
+            <!-- COLUMN 2: Quick Links -->
+            <div>
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="#">Digital Menu</a></li>
+                <li><a href="#">Study Pod Booking</a></li>
+                <li><a href="#">Student Perks</a></li>
+                <li><a href="#">Rewards Program</a></li>
+              </ul>
+            </div>
+
+            <!-- COLUMN 3: Contact Info -->
+            <div>
+              <h4 class="footer-heading">Visit Us</h4>
+              <ul class="contact-info">
+                <li>
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span
+                    >123 University Ave,<br />Campus District, NY 10012</span
+                  >
+                </li>
+                <li>
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span
+                    >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                    Hour</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+          <div class="footer-bottom">
+            <p>© 2026 QuickBite. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="mobile-cart glass">
+      <div class="cart-info">
+        <span class="material-symbols-outlined text-primary">shopping_bag</span>
+        <span class="font-bold">3 Items</span>
+      </div>
+      <div class="divider"></div>
+      <div class="cart-total">
+        <span class="text-muted">Total: <b>Rs. 2,250</b></span>
+        <button class="btn-checkout">Checkout</button>
+      </div>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

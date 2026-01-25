@@ -1,151 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuickBites - Indulgent Desserts</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="deserts.css">
-    <link rel="stylesheet" href="deserts.js">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="deserts.css" />
+    <link rel="stylesheet" href="deserts.js" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Background Orbs (Optional - but recommended for consistency) -->
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
 
-    <header>
+    <!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span>
+          .
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header
+      class="glass"
+      style="
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        padding: 15px 0;
+      "
+    >
+      <div class="container nav-wrapper">
+        <!-- Logo -->
         <div class="logo">
-            <span style="color: var(--primary-orange); font-size: 1.5rem;">🔶</span>QUICKBITES
+          <span class="material-symbols-outlined">all_inclusive</span>
+          <h2>QuickBite</h2>
         </div>
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-bar" placeholder="Search desserts...">
+
+        <!-- Navigation Links -->
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Menu/manu_final.html">Menu</a></li>
+            <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+          </ul>
+        </nav>
+
+        <!-- Nav Actions: Order Button + User Profile -->
+        <div class="nav-actions" id="nav-actions">
+          <button class="btn-order">Order Now</button>
+          <div id="nav-profile-slot"></div>
         </div>
-        <div style="background: #222; padding: 10px; border-radius: 8px; position: relative; cursor: pointer;">
-            <i class="fas fa-shopping-bag" style="color: var(--primary-orange);"></i>
-            <span id="cartCountBadge" style="position: absolute; top: -5px; right: -5px; background: var(--primary-orange); color: black; font-size: 0.7rem; padding: 2px 6px; border-radius: 50%; font-weight: bold;">0</span>
-        </div>
+      </div>
     </header>
 
-    <div class="breadcrumb">Menu  &nbsp; > &nbsp;  Indulgent Desserts</div>
+    <div class="breadcrumbs" style="margin-top: 80px">
+      <a href="../index.html">Home</a>
+      <span class="material-symbols-outlined">chevron_right</span>
+      <a href="../Menu/manu_final.html">Menu</a>
+      <span class="material-symbols-outlined">chevron_right</span>
+      <span>Desserts</span>
+    </div>
 
     <section class="title-section">
-        <h1>Sweet <span>Indulgence</span></h1>
-        <p class="description-text">Treat yourself to our student-special collection. From warm lava cakes to artisan gelato, curated for late-night study breaks.</p>
+      <h1>Sweet <span>Indulgence</span></h1>
+      <p class="description-text">
+        Treat yourself to our student-special collection. From warm lava cakes
+        to artisan gelato, curated for late-night study breaks.
+      </p>
     </section>
 
     <div class="filter-pills" id="filterContainer">
-        <div class="pill active" data-category="all">All Sweets</div>
-        <div class="pill" data-category="warm">Warm Cakes</div>
-        <div class="pill" data-category="icecream">Ice Cream</div>
-        <div class="pill" data-category="vegan">Vegan Friendly</div>
+      <div class="pill active" data-category="all">All Sweets</div>
+      <div class="pill" data-category="warm">Warm Cakes</div>
+      <div class="pill" data-category="icecream">Ice Cream</div>
+      <div class="pill" data-category="vegan">Vegan Friendly</div>
     </div>
 
     <main class="menu-grid" id="menuGrid">
-        <article class="card" data-category="warm" data-price="5.50" data-name="molten lava cake">
-            <div class="img-container">
-                <span class="price-tag">$5.50</span>
-                <img src="https://images.unsplash.com/photo-1762631176731-42672d735b85?q=80&w=1520&auto=format&fit=crop" class="card-img">
+      <article
+        class="card"
+        data-category="warm"
+        data-price="5.50"
+        data-name="molten lava cake"
+      >
+        <div class="img-container">
+          <span class="price-tag">$5.50</span>
+          <img
+            src="https://images.unsplash.com/photo-1762631176731-42672d735b85?q=80&w=1520&auto=format&fit=crop"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Molten Lava Cake</h3>
+          <p class="item-desc">
+            Freshly made chocolate mousse cake. Delicacy in cafe.
+          </p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus active">-</span>
+              <span class="qty-val">0</span> <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>Molten Lava Cake</h3>
-                <p class="item-desc">Freshly made chocolate mousse cake. Delicacy in cafe.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus active">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
 
-        <article class="card" data-category="icecream" data-price="6.75" data-name="artisan gelato">
-            <div class="img-container">
-                <span class="badge-small">Best Seller</span>
-                <span class="price-tag">$6.75</span>
-                <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=400" class="card-img">
+      <article
+        class="card"
+        data-category="icecream"
+        data-price="6.75"
+        data-name="artisan gelato"
+      >
+        <div class="img-container">
+          <span class="badge-small">Best Seller</span>
+          <span class="price-tag">$6.75</span>
+          <img
+            src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=400"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Artisan Gelato</h3>
+          <p class="item-desc">
+            Hand-churned seasonal flavors. Choose 3 scoops.
+          </p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus">-</span> <span class="qty-val">0</span>
+              <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>Artisan Gelato</h3>
-                <p class="item-desc">Hand-churned seasonal flavors. Choose 3 scoops.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
 
-        <article class="card" data-category="warm" data-price="7.00" data-name="black forest cake">
-            <div class="img-container">
-                <span class="price-tag">$7.00</span>
-                <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=503&auto=format&fit=crop" class="card-img">
+      <article
+        class="card"
+        data-category="warm"
+        data-price="7.00"
+        data-name="black forest cake"
+      >
+        <div class="img-container">
+          <span class="price-tag">$7.00</span>
+          <img
+            src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=503&auto=format&fit=crop"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>The Black Forest Cake</h3>
+          <p class="item-desc">
+            A delicious German classic with an American spin.
+          </p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus">-</span> <span class="qty-val">0</span>
+              <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>The Black Forest Cake</h3>
-                <p class="item-desc">A delicious German classic with an American spin.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
 
-        <article class="card" data-category="warm" data-price="4.00" data-name="doughnut">
-            <div class="img-container">
-                <span class="price-tag">$4.00</span>
-                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1528&auto=format&fit=crop" class="card-img">
+      <article
+        class="card"
+        data-category="warm"
+        data-price="4.00"
+        data-name="doughnut"
+      >
+        <div class="img-container">
+          <span class="price-tag">$4.00</span>
+          <img
+            src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1528&auto=format&fit=crop"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Doughnut</h3>
+          <p class="item-desc">
+            Sweet, fried pastry with a soft, fluffy inside.
+          </p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus">-</span> <span class="qty-val">0</span>
+              <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>Doughnut</h3>
-                <p class="item-desc">Sweet, fried pastry with a soft, fluffy inside.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
 
-        <article class="card" data-category="warm" data-price="5.30" data-name="waffle ice cream">
-            <div class="img-container">
-                <span class="price-tag">$5.30</span>
-                <img src="https://images.unsplash.com/photo-1593250186288-f06f69859f8e?q=80&w=1374&auto=format&fit=crop" class="card-img">
+      <article
+        class="card"
+        data-category="warm"
+        data-price="5.30"
+        data-name="waffle ice cream"
+      >
+        <div class="img-container">
+          <span class="price-tag">$5.30</span>
+          <img
+            src="https://images.unsplash.com/photo-1593250186288-f06f69859f8e?q=80&w=1374&auto=format&fit=crop"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Waffle with Ice cream</h3>
+          <p class="item-desc">
+            Belgium waffle served with three scoops of vanilla.
+          </p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus">-</span> <span class="qty-val">0</span>
+              <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>Waffle with Ice cream</h3>
-                <p class="item-desc">Belgium waffle served with three scoops of vanilla.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
 
-        <article class="card" data-category="vegan" data-price="6.30" data-name="fruit bowl">
-            <div class="img-container">
-                <span class="price-tag">$6.30</span>
-                <span class="badge-small badge-vegan">Vegan</span>
-                <img src="https://images.unsplash.com/photo-1742860888419-df3ea5d3edcc?q=80&w=981&auto=format&fit=crop" class="card-img">
+      <article
+        class="card"
+        data-category="vegan"
+        data-price="6.30"
+        data-name="fruit bowl"
+      >
+        <div class="img-container">
+          <span class="price-tag">$6.30</span>
+          <span class="badge-small badge-vegan">Vegan</span>
+          <img
+            src="https://images.unsplash.com/photo-1742860888419-df3ea5d3edcc?q=80&w=981&auto=format&fit=crop"
+            class="card-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Special Fruit Bowl</h3>
+          <p class="item-desc">Healthy fruit with yoghurt and crunchy nuts.</p>
+          <div class="card-footer">
+            <div class="qty-box">
+              <span class="btn minus">-</span> <span class="qty-val">0</span>
+              <span class="btn plus">+</span>
             </div>
-            <div class="card-content">
-                <h3>Special Fruit Bowl</h3>
-                <p class="item-desc">Healthy fruit with yoghurt and crunchy nuts.</p>
-                <div class="card-footer">
-                    <div class="qty-box">
-                        <span class="btn minus">-</span> <span class="qty-val">0</span> <span class="btn plus">+</span>
-                    </div>
-                    <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </article>
+            <button class="add-btn"><i class="fas fa-cart-plus"></i></button>
+          </div>
+        </div>
+      </article>
     </main>
 
     <a href="#" class="review-order" id="reviewOrderBtn">
-        <i class="fas fa-file-alt"></i> Review Order ($<span id="totalPrice">0.00</span>)
+      <i class="fas fa-file-alt"></i> Review Order ($<span id="totalPrice"
+        >0.00</span
+      >)
     </a>
-</body>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- COLUMN 1: Brand & Description -->
+          <div class="footer-brand">
+            <div class="logo">
+              <span class="material-symbols-outlined">all_inclusive</span>
+              <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
+            </div>
+            <p>
+              Dedicated to the night owls, the morning birds, and everyone in
+              between. We are your 24/7 sanctuary for productivity.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon"
+                ><span class="material-symbols-outlined" style="font-size: 18px"
+                  >public</span
+                ></a
+              >
+              <a href="#" class="social-icon"
+                ><span class="material-symbols-outlined" style="font-size: 18px"
+                  >share</span
+                ></a
+              >
+              <a href="#" class="social-icon"
+                ><span class="material-symbols-outlined" style="font-size: 18px"
+                  >mail</span
+                ></a
+              >
+            </div>
+          </div>
+
+          <!-- COLUMN 2: Quick Links -->
+          <div>
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#">Digital Menu</a></li>
+              <li><a href="#">Study Pod Booking</a></li>
+              <li><a href="#">Student Perks</a></li>
+              <li><a href="#">Rewards Program</a></li>
+            </ul>
+          </div>
+
+          <!-- COLUMN 3: Contact Info -->
+          <div>
+            <h4 class="footer-heading">Visit Us</h4>
+            <ul class="contact-info">
+              <li>
+                <span class="material-symbols-outlined">location_on</span>
+                <span>123 University Ave,<br />Campus District, NY 10012</span>
+              </li>
+              <li>
+                <span class="material-symbols-outlined">schedule</span>
+                <span
+                  >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every
+                  Hour</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+        <div class="footer-bottom">
+          <p>© 2026 QuickBite. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
+  </body>
 </html>
