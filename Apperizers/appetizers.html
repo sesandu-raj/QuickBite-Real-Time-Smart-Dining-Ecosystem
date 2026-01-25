@@ -6,32 +6,82 @@
     <title>CampusBites - Appetizers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styleappetizers.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="../style.css" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  rel="stylesheet"
+/>
 </head>
 <body>
+    <div class="bg-glow-container">
+      <div class="orb orb-primary"></div>
+      <div class="orb orb-amber"></div>
+    </div>
 
-    <header>
-        <a href="Menu/manu_final.html" class="logo">🔶 CampusBites</a>
-        <nav>
-            <ul>
-                <li><a href="Appetizers.html" class="active">Menu</a></li>
-                <li><a href="My_Orders/my_orders.html" >Orders</a></li>
-                <li><a href="">Promos</a></li>
-            </ul>
-        </nav>
-        <div class="header-tools">
-            <input type="text" class="search-bar" placeholder="Search menu...">
-            <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">3</span>
-            </div>
-            <i class="far fa-user-circle" style="font-size: 1.5rem;"></i>
+    <!-- Custom Prompt Overlay (QR Code Name Input Modal) -->
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
         </div>
-    </header>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span
+          >.
+        </p>
 
-    <div class="breadcrumb">Home >  <span style="color: var(--primary-orange);">Appetizers</span></div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="glass" style="width: 100vw; position: fixed; top: 0; left: 0; z-index: 50; padding: 15px 0;">
+      <div class="container nav-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Menu/manu_final.html">Menu</a></li>
+              <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+
+          <!-- Nav Actions: Order Button + User Profile -->
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
+
+    <div class="relative-content">
+
+    <div class="breadcrumb" style="margin-top: 80px;">Home >  <span style="color: var(--primary-orange);">Appetizers</span></div>
 
     <section class="title-section">
         <h1>Appetizers</h1>
@@ -313,14 +363,81 @@ filterButtons.forEach(button => {
     </main>
 
     <footer>
-        <div>🔶 CampusBites</div>
-        <div>©️ 2024 CampusBites Ordering System. All rights reserved.</div>
-        <div class="footer-links">
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Support</span>
+  <div class="container">
+    <div class="footer-grid">
+      <!-- COLUMN 1: Brand & Description -->
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-symbols-outlined">all_inclusive</span>
+          <h2 style="font-size: 1.2rem; font-weight: 800">QuickBite</h2>
         </div>
-    </footer>
+        <p>
+          Dedicated to the night owls, the morning birds, and everyone in
+          between. We are your 24/7 sanctuary for productivity.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >public</span
+            ></a
+          >
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >share</span
+            ></a
+          >
+          <a href="#" class="social-icon"
+            ><span class="material-symbols-outlined" style="font-size: 18px"
+              >mail</span
+            ></a
+          >
+        </div>
+      </div>
 
-</body>
+      <!-- COLUMN 2: Quick Links -->
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Digital Menu</a></li>
+          <li><a href="#">Study Pod Booking</a></li>
+          <li><a href="#">Student Perks</a></li>
+          <li><a href="#">Rewards Program</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: Contact Info -->
+      <div>
+        <h4 class="footer-heading">Visit Us</h4>
+        <ul class="contact-info">
+          <li>
+            <span class="material-symbols-outlined">location_on</span>
+            <span>123 University Ave,<br />Campus District, NY 10012</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">schedule</span>
+            <span
+              >Open 24 Hours / 7 Days a Week<br />Fresh Coffee Every Hour</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FOOTER BOTTOM: Copyright & Legal Links -->
+    <div class="footer-bottom">
+      <p>© 2026 QuickBite. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
+  </body>
 </html>
