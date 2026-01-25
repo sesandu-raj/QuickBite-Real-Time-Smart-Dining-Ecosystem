@@ -171,6 +171,12 @@ header {
   font-size: 30px;
 }
 
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -234,6 +240,7 @@ nav a:hover {
 }
 
 .gradient-text {
+  color: #f59e0b;
   background: linear-gradient(to right, var(--primary), #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
