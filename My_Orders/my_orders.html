@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>My Orders | QuickBite</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="order-style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap"
@@ -15,28 +15,58 @@
     />
   </head>
   <body>
-    <header class="glass">
-      <div class="container nav-wrapper">
-        <a
-          href="../index.html"
-          class="logo"
-          style="text-decoration: none; color: inherit"
-        >
-          <span class="material-symbols-outlined">all_inclusive</span>
-          <h2>QuickBite</h2>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="/My_Orders/my_orders.html">My Orders</a></li>
-          </ul>
-        </nav>
-        <button class="btn-order">Order Now</button>
-      </div>
-    </header>
+    <div id="custom-prompt-overlay" class="prompt-overlay">
+      <div class="prompt-card glass">
+        <div class="prompt-icon">
+          <span class="material-symbols-outlined">person_pin</span>
+        </div>
+        <h2>Welcome!</h2>
+        <p>
+          Please enter your name to personalize your experience at
+          <span
+            id="prompt-table-display"
+            style="color: var(--primary); font-weight: 800"
+          ></span
+          >.
+        </p>
 
-    <main class="order-list">
+        <div class="input-group">
+          <input
+            type="text"
+            id="custom-name-input"
+            placeholder="Your Name..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="confirm-name-btn" class="btn-primary" style="width: 100%">
+          Start Dining
+        </button>
+      </div>
+    </div>
+
+    <div style="position: relative; z-index: 10">
+      <header class="glass">
+        <div class="container nav-wrapper">
+          <div class="logo">
+            <span class="material-symbols-outlined">all_inclusive</span>
+            <h2>QuickBite</h2>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Menu/manu_final.html">Menu</a></li>
+              <li><a href="my_orders.html">My Orders</a></li>
+            </ul>
+          </nav>
+          <div class="nav-actions" id="nav-actions">
+            <button class="btn-order">Order Now</button>
+            <div id="nav-profile-slot"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="order-list">
       <div
         style="
           display: flex;
@@ -203,7 +233,8 @@
           <p style="font-size: 1.8rem; font-weight: 900; margin: 0">$84.20</p>
         </div>
       </div>
-    </main>
+      </main>
+    </div>
 
     <footer>
         <div class="container">
@@ -280,5 +311,10 @@
           </div>
         </div>
       </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+      initializeQuickBite();
+    </script>
   </body>
 </html>
