@@ -1,0 +1,47 @@
+async function sendOrderToKitchen() {
+    // 1. Gather data from local storage
+    const tableNo = localStorage.getItem("assignedTable") || "Not Assigned";
+    const customerName = localStorage.getItem("customerName") || "Guest";
+    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+    // 2. Validation
+    if (cart.length === 0) {
+        alert("Your cart is empty! Add some Sri Lankan fuel first.");
+        return;
+    }
+
+    const checkoutBtn = document.querySelector(".btn-checkout");
+    checkoutBtn.disabled = true;
+    checkoutBtn.innerText = "Processing...";
+
+    try {
+        // 3. Send to Firebase using the demo project structure
+        const docRef = await db.collection("orders").add({
+            table: tableNo,
+            customer: customerName,
+            items: cart, // Array of {name, price, quantity}
+            totalPrice: totalPrice,
+            status: "Pending",
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+
+        // 4. Save the ID for tracking
+        localStorage.setItem("lastOrderId", docRef.id);
+
+        alert("Order received! The kitchen is starting on your meal.");
+        
+        // 5. Clear the cart and redirect
+        localStorage.removeItem("quickBiteCart");
+        cart = []; // Reset local variable
+        window.location.href = "../My_Orders/my_orders.html";
+
+    } catch (error) {
+        console.error("Firebase Order Error:", error);
+        alert("Failed to send order. Please check your internet connection.");
+    } finally {
+        checkoutBtn.disabled = false;
+        checkoutBtn.innerText = "Checkout";
+    }
+}
+
+
