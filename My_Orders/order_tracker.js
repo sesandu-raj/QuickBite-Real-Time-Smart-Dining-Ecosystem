@@ -1,91 +1,96 @@
-// 1. Safety Check: Use window object to prevent "Identifier already declared" errors
-if (typeof firebaseConfig === 'undefined') {
-    window.firebaseConfig = {
-        apiKey: "AIzaSyBxES9tk3bAFUu64JhDPLgHzPs5hUKLNvM",
-        authDomain: "resturant-cb358.firebaseapp.com",
-        projectId: "resturant-cb358",
-        storageBucket: "resturant-cb358.firebasestorage.app",
-        messagingSenderId: "806584741054",
-        appId: "1:806584741054:web:314fb1c462eba54c2cc2ef",
-    };
-}
-
-// 2. Initialize Firebase only if it hasn't been initialized
-if (!firebase.apps.length) {
-    firebase.initializeApp(window.firebaseConfig);
-}
-
-// 3. Set global db variable safely
-if (typeof db === 'undefined') {
-    window.db = firebase.firestore();
-}
-
 /**
  * Main function to track active orders for the current table
  */
 function startOrderTracking() {
-    const tableNum = localStorage.getItem("assignedTable");
-    const container = document.getElementById("orders-container");
+  const tableNum = localStorage.getItem("assignedTable");
+  const customerName = localStorage.getItem("customerName") || "Guest";
+  const container = document.getElementById("orders-container");
 
-    if (!tableNum) {
-        if (container) container.innerHTML = `
+  // Update header display
+  document.getElementById("table-id-display").innerText =
+    tableNum || "Not Assigned";
+  document.getElementById("user-greet").innerText = `${customerName}'s Orders`;
+
+  if (!tableNum) {
+    if (container)
+      container.innerHTML = `
             <div class="glass-card" style="padding: 40px; text-align: center;">
-                <p class="text-muted">No table assigned. Please scan a QR code to view orders.</p>
+                <p class="text-muted">Please scan a QR code to view your orders.</p>
             </div>`;
-        return;
-    }
+    return;
+  }
 
-    // 4. Real-time listener for this table
-    // Matches the "Delivered" status from your kitchen.js logic
-    db.collection("orders")
-        .where("table", "==", String(tableNum))
-        .where("status", "!=", "Delivered") 
-        .onSnapshot((snapshot) => {
-            let runningTotal = 0;
-            
-            if (snapshot.empty) {
-                if (container) container.innerHTML = `
+  // Query WITHOUT orderBy to avoid requiring composite index
+  // We'll sort in JavaScript instead
+  db.collection("orders")
+    .where("table", "==", String(tableNum))
+    .onSnapshot(
+      (snapshot) => {
+        let runningTotal = 0;
+        let allOrders = []; // Collect all orders first
+
+        snapshot.forEach((doc) => {
+          allOrders.push({ id: doc.id, ...doc.data() });
+        });
+
+        // Sort by timestamp descending (newest first)
+        allOrders.sort((a, b) => {
+          const timeA = a.timestamp ? a.timestamp.toMillis() : 0;
+          const timeB = b.timestamp ? b.timestamp.toMillis() : 0;
+          return timeB - timeA;
+        });
+
+        if (allOrders.length === 0) {
+          if (container)
+            container.innerHTML = `
                     <div class="glass-card" style="padding: 60px; text-align: center;">
-                        <p class="text-muted">No active orders found for Table ${tableNum}.</p>
+                        <p class="text-muted">No orders placed yet for this table.</p>
                     </div>`;
-                document.getElementById("table-total-display").innerText = "0";
-                return;
-            }
+          document.getElementById("table-total-display").innerText = "0";
+          return;
+        }
 
-            if (container) container.innerHTML = ""; // Clear existing cards
+        if (container) container.innerHTML = ""; // Clear existing cards
 
-            snapshot.forEach((doc) => {
-                const order = doc.data();
-                const status = order.status || "Pending";
-                runningTotal += order.totalPrice || 0;
+        allOrders.forEach((order) => {
+          const doc = { id: order.id, data: () => order };
+          const status = order.status || "Pending";
+          runningTotal += order.totalPrice || 0;
 
-                // 5. Handle the item object structure to prevent [object Object]
-                const itemDetails = order.items && Array.isArray(order.items)
-                    ? order.items.map(item => {
-                        return typeof item === 'object' 
-                            ? `${item.quantity}x ${item.name}` 
-                            : item; // Fallback for old string-only data
-                      }).join(", ")
-                    : "Items not listed";
+          // Handle the item object structure
+          const itemDetails =
+            order.items && Array.isArray(order.items)
+              ? order.items
+                  .map((item) => {
+                    return typeof item === "object"
+                      ? `${item.quantity}x ${item.name}`
+                      : item;
+                  })
+                  .join(", ")
+              : "Items not listed";
 
-                // 6. Create the professional order card
-                const orderCard = document.createElement("div");
-                orderCard.className = "order-card glass";
-                
-                // Status Badge Logic
-                let statusBadge = `<div class="badge-preparing" style="background: rgba(255,255,255,0.1)">PENDING</div>`;
-                if (status === "Preparing") statusBadge = `<div class="badge-preparing">COOKING</div>`;
-                if (status === "Ready") statusBadge = `<div class="badge-ready"><span class="material-symbols-outlined">check_circle</span> READY</div>`;
+          // Create the order card
+          const orderCard = document.createElement("div");
+          orderCard.className = "order-card glass";
 
-                orderCard.innerHTML = `
+          // Status Badge
+          let statusBadge = `<div class="badge-preparing" style="background: rgba(255,255,255,0.1); color: var(--primary);">PENDING</div>`;
+          if (status === "Preparing")
+            statusBadge = `<div class="badge-preparing">COOKING</div>`;
+          if (status === "Ready")
+            statusBadge = `<div class="badge-ready"><span class="material-symbols-outlined">check_circle</span> READY</div>`;
+          if (status === "Delivered")
+            statusBadge = `<div class="badge-ready" style="background: rgba(40,167,69,0.2); color: #28a745;">DELIVERED</div>`;
+
+          orderCard.innerHTML = `
                     <div style="flex-grow: 1">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                             <div>
                                 <p style="color: var(--primary); font-size: 0.7rem; font-weight: 800; margin-bottom: 5px;">
-                                    ORDER #${doc.id.substring(0,5).toUpperCase()}
+                                    ORDER #${doc.id.substring(0, 5).toUpperCase()}
                                 </p>
-                                <h3>Table Service</h3>
-                                <p style="color: var(--text-muted); font-size: 0.8rem;">Table ${order.table} • ${order.customer || 'Guest'}</p>
+                                <h3>Table Order</h3>
+                                <p style="color: var(--text-muted); font-size: 0.8rem;">Table ${order.table}</p>
                             </div>
                             ${statusBadge}
                         </div>
@@ -98,18 +103,21 @@ function startOrderTracking() {
                         </div>
                     </div>
                 `;
-                container.appendChild(orderCard);
-            });
-
-            // Update the running total display for the whole table
-            const totalDisplay = document.getElementById("table-total-display");
-            if (totalDisplay) totalDisplay.innerText = runningTotal.toLocaleString();
-        }, (error) => {
-            console.error("Firebase Tracking Error:", error);
-            // This usually happens if the Composite Index is missing
-            if (container) container.innerHTML = `<p style="color:red; padding:20px;">Tracking Error: Check console for Index Link.</p>`;
+          container.appendChild(orderCard);
         });
+
+        // Update the total display
+        const totalDisplay = document.getElementById("table-total-display");
+        if (totalDisplay)
+          totalDisplay.innerText = runningTotal.toLocaleString();
+      },
+      (error) => {
+        console.error("Firebase Tracking Error:", error);
+        if (container)
+          container.innerHTML = `<p style="color:red; padding:20px;">Error loading orders. Please refresh the page.</p>`;
+      },
+    );
 }
 
 // Start tracking once the DOM is fully loaded
-window.addEventListener('DOMContentLoaded', startOrderTracking);
+window.addEventListener("DOMContentLoaded", startOrderTracking);
