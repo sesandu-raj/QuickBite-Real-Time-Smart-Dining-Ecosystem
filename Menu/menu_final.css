@@ -293,9 +293,10 @@ nav a:hover {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
   margin-bottom: 80px;
+  max-width: 1400px;
 }
 .category-card {
   border-radius: 24px;

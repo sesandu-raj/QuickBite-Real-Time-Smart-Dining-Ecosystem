@@ -364,3 +364,36 @@ header {
 .review-order:hover {
   transform: scale(1.05);
 }
+
+/* Search Container Styles */
+.search-container {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 16px;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-container input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  outline: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+}
+
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-container .material-symbols-outlined {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+}

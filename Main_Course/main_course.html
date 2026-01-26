@@ -111,395 +111,27 @@
               Freshly prepared meals for your study break
             </p>
           </div>
-          <div class="filter-tabs">
-            <a href="#" class="tab active">All Items</a>
-            <a href="#" class="tab">Vegetarian</a>
-            <a href="#" class="tab">Spicy</a>
-            <a href="#" class="tab">Popular</a>
-          </div>
         </div>
 
-        <div class="food-grid">
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=1000"
-                alt="Sri Lankan Rice and Curry"
-              />
-              <span class="badge-popular">Best Seller</span>
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Signature Rice & Curry</h3>
-                <p class="price">Rs. 850</p>
-              </div>
-              <p class="card-desc">
-                Traditional red rice served with 5 seasonal curries, dhal, and
-                crispy papadum.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Signature Rice & Curry', 850, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="search-container glass">
+          <span class="material-symbols-outlined">search</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for rice, curry, kottu, seafood..."
+          />
+        </div>
 
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1633383718081-22ac93e3dbf1?q=80&w=1000"
-                alt="Chicken Kottu Roti"
-              />
-              <span class="badge-spicy">Spicy</span>
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Cheese Chicken Kottu</h3>
-                <p class="price">Rs. 1200</p>
-              </div>
-              <p class="card-desc">
-                Chopped godamba roti stir-fried with fresh veggies, egg,
-                shredded chicken, and melted cheese.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Cheese Chicken Kottu', 1200, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="filter-pills" id="filterContainer">
+          <div class="pill active" data-category="all">All Items</div>
+          <div class="pill" data-category="vegetarian">Vegetarian</div>
+          <div class="pill" data-category="spicy">Spicy</div>
+          <div class="pill" data-category="popular">Popular</div>
+        </div>
 
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1627444230620-315993e18a8d?q=80&w=1000"
-                alt="Sri Lankan Hoppers"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Egg Hopper Set (3pcs)</h3>
-                <p class="price">Rs. 450</p>
-              </div>
-              <p class="card-desc">
-                Crispy edge pancakes with a soft center, served with spicy lunu
-                miris and seeni sambol.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Egg Hopper Set (3pcs)', 450, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1000"
-                alt="Lamprais"
-              />
-              <span class="badge-popular">Authentic</span>
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Mixed Meat Lamprais</h3>
-                <p class="price">Rs. 1500</p>
-              </div>
-              <p class="card-desc">
-                Dutch-influenced rice boiled in meat stock, wrapped and baked in
-                a banana leaf for aroma.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Mixed Meat Lamprais', 1500, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1000"
-                alt="Crab Curry"
-              />
-              <span class="badge-spicy">Extra Spicy</span>
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Jaffna Crab Curry</h3>
-                <p class="price">Rs. 2800</p>
-              </div>
-              <p class="card-desc">
-                Fresh lagoon crab cooked in a fiery blend of roasted Jaffna
-                spices and coconut milk.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Jaffna Crab Curry', 2800, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000"
-                alt="String Hoppers"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>String Hopper Pillau</h3>
-                <p class="price">Rs. 950</p>
-              </div>
-              <p class="card-desc">
-                Steamed string hoppers tossed with fried onions, cashews, and
-                served with a thick chicken gravy.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('String Hopper Pillau', 950, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1000"
-                alt="Fish Curry"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Sour Fish (Ambul Thiyal)</h3>
-                <p class="price">Rs. 1100</p>
-              </div>
-              <p class="card-desc">
-                Tuna cubes dry-cooked with black pepper and 'goraka' for a
-                unique tart and smoky flavor.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Sour Fish (Ambul Thiyal)', 1100, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1601050690597-df056fb04791?q=80&w=1000"
-                alt="Pol Roti"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Rustic Pol Roti Set</h3>
-                <p class="price">Rs. 550</p>
-              </div>
-              <p class="card-desc">
-                Four coconut flatbreads served with spicy katta sambol and a
-                creamy dhal curry.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Rustic Pol Roti Set', 550, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=1000"
-                alt="Watalappam"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Jaggery Watalappam</h3>
-                <p class="price">Rs. 400</p>
-              </div>
-              <p class="card-desc">
-                Rich coconut custard sweetened with kitul jaggery and infused
-                with cardamom and nutmeg.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Jaggery Watalappam', 400, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="food-card glass">
-            <div class="card-media">
-              <img
-                src="https://images.unsplash.com/photo-1621506289937-9cd14d003d3b?q=80&w=1000"
-                alt="Woodapple Smoothie"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>Chilled Woodapple Mix</h3>
-                <p class="price">Rs. 350</p>
-              </div>
-              <p class="card-desc">
-                Tangy and sweet tropical woodapple pulp blended with coconut
-                milk and a touch of honey.
-              </p>
-              <div class="card-actions">
-                <div class="quantity-picker">
-                  <button onclick="changeQty(this, -1)">
-                    <span class="material-symbols-outlined">remove</span>
-                  </button>
-                  <span class="qty-count">1</span>
-                  <button onclick="changeQty(this, 1)">
-                    <span class="material-symbols-outlined">add</span>
-                  </button>
-                </div>
-                <button
-                  class="btn-add-cart"
-                  onclick="addToCart('Chilled Woodapple Mix', 350, this)"
-                >
-                  <span class="material-symbols-outlined"
-                    >add_shopping_cart</span
-                  >Add to Cart
-                </button>
+        <div class="food-grid" id="foodGrid">
+          <!-- Items will be loaded from array -->
+        </div>
               </div>
             </div>
           </div>
@@ -606,7 +238,213 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script src="../script.js"></script>
     <script>
-      initializeQuickBite();
+      // Main Course Data Array
+      const mainCourseData = [
+        {
+          name: 'Signature Rice & Curry',
+          price: 850,
+          image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=1000',
+          description: 'Traditional red rice served with 5 seasonal curries, dhal, and crispy papadum.',
+          category: 'popular',
+          badge: 'Best Seller'
+        },
+        {
+          name: 'Cheese Chicken Kottu',
+          price: 1200,
+          image: 'https://images.unsplash.com/photo-1633383718081-22ac93e3dbf1?q=80&w=1000',
+          description: 'Chopped godamba roti stir-fried with fresh veggies, egg, shredded chicken, and melted cheese.',
+          category: 'spicy',
+          badge: 'Spicy'
+        },
+        {
+          name: 'Egg Hopper Set (3pcs)',
+          price: 450,
+          image: 'https://images.unsplash.com/photo-1627444230620-315993e18a8d?q=80&w=1000',
+          description: 'Crispy edge pancakes with a soft center, served with spicy lunu miris and seeni sambol.',
+          category: 'vegetarian',
+          badge: null
+        },
+        {
+          name: 'Mixed Meat Lamprais',
+          price: 1500,
+          image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1000',
+          description: 'Dutch-influenced rice boiled in meat stock, wrapped and baked in a banana leaf for aroma.',
+          category: 'popular',
+          badge: 'Authentic'
+        },
+        {
+          name: 'Jaffna Crab Curry',
+          price: 2800,
+          image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1000',
+          description: 'Fresh lagoon crab cooked in a fiery blend of roasted Jaffna spices and coconut milk.',
+          category: 'spicy',
+          badge: 'Extra Spicy'
+        },
+        {
+          name: 'String Hopper Pillau',
+          price: 950,
+          image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000',
+          description: 'Steamed string hoppers tossed with fried onions, cashews, and served with a thick chicken gravy.',
+          category: 'popular',
+          badge: null
+        },
+        {
+          name: 'Vegetable Biriyani',
+          price: 750,
+          image: 'https://images.unsplash.com/photo-1631235091169-4d071edca57c?q=80&w=1000',
+          description: 'Fragrant basmati rice layered with seasonal vegetables and aromatic spices.',
+          category: 'vegetarian',
+          badge: null
+        },
+        {
+          name: 'Jaggery Watalappam',
+          price: 400,
+          image: 'https://images.unsplash.com/photo-1585459743457-d8f8213b8c5a?q=80&w=1000',
+          description: 'Creamy egg custard pudding infused with jaggery and fragrant spices.',
+          category: 'vegetarian',
+          badge: null
+        },
+        {
+          name: 'Chilled Woodapple Mix',
+          price: 350,
+          image: 'https://images.unsplash.com/photo-1621506289937-9cd14d003d3b?q=80&w=1000',
+          description: 'Tangy and sweet tropical woodapple pulp blended with coconut milk and a touch of honey.',
+          category: 'vegetarian',
+          badge: null
+        },
+ {
+    name: 'Sour Fish (Ambul Thiyal)',
+    price: 1100,
+    image: 'https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1000',
+    description: "Tuna cubes dry-cooked with black pepper and 'goraka' for a unique tart and smoky flavor.",
+    category: 'seafood',
+    badge: 'popular'
+  },
+  {
+    name: 'Rustic Pol Roti Set',
+    price: 550,
+    image: 'https://images.unsplash.com/photo-1601050690597-df056fb04791?q=80&w=1000',
+    description: 'Four coconut flatbreads served with spicy katta sambol and a creamy dhal curry.',
+    category: 'vegetarian',
+    badge: null
+  },
+  {
+    name: 'Jaggery Watalappam',
+    price: 400,
+    image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=1000',
+    description: 'Rich coconut custard sweetened with kitul jaggery and infused with cardamom and nutmeg.',
+    category: 'dessert',
+    badge: 'chef-special'
+  },
+  {
+    name: 'Chilled Woodapple Mix',
+    price: 350,
+    image: 'https://images.unsplash.com/photo-1621506289937-9cd14d003d3b?q=80&w=1000',
+    description: 'Tangy and sweet tropical woodapple pulp blended with coconut milk and a touch of honey.',
+    category: 'beverage',
+    badge: null
+  }
+
+      ];
+
+      // Load items from array
+      function loadItems(itemsToDisplay = mainCourseData) {
+        const foodGrid = document.getElementById('foodGrid');
+        foodGrid.innerHTML = '';
+
+        itemsToDisplay.forEach(item => {
+          let badgeHTML = '';
+          if (item.badge) {
+            const badgeClass = item.badge === 'Spicy' || item.badge === 'Extra Spicy' ? 'badge-spicy' : 'badge-popular';
+            badgeHTML = `<span class="${badgeClass}">${item.badge}</span>`;
+          }
+
+          const card = document.createElement('div');
+          card.className = 'food-card glass';
+          card.dataset.category = item.category;
+          card.innerHTML = `
+            <div class="card-media">
+              <img src="${item.image}" alt="${item.name}" />
+              ${badgeHTML}
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>${item.name}</h3>
+                <p class="price">Rs. ${item.price}</p>
+              </div>
+              <p class="card-desc">${item.description}</p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button onclick="changeQty(this, -1)">
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span class="qty-count">1</span>
+                  <button onclick="changeQty(this, 1)">
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart" onclick="addToCart('${item.name}', ${item.price}, this)">
+                  <span class="material-symbols-outlined">add_shopping_cart</span>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          `;
+          foodGrid.appendChild(card);
+        });
+      }
+
+      // Search functionality
+      function searchItems(query) {
+        const searchTerm = query.toLowerCase().trim();
+        if (searchTerm === '') {
+          loadItems(mainCourseData);
+        } else {
+          const filteredItems = mainCourseData.filter(item =>
+            item.name.toLowerCase().includes(searchTerm) ||
+            item.description.toLowerCase().includes(searchTerm)
+          );
+          loadItems(filteredItems);
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        loadItems();
+
+        // Add search event listener
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchItems(e.target.value);
+          });
+        }
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-pills .pill');
+        const foodGrid = document.getElementById('foodGrid');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.category;
+            const cards = foodGrid.querySelectorAll('.food-card');
+
+            cards.forEach(card => {
+              const category = card.dataset.category || "";
+              if (filter === "all" || category === filter) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        initializeQuickBite();
+      });
     </script>
   </body>
 </html>

@@ -112,6 +112,15 @@
       </p>
     </section>
 
+      <div class="search-container glass">
+      <span class="material-symbols-outlined">search</span>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search for cakes, ice cream, or treats..."
+      />
+    </div>
+
     <div class="filter-pills" id="filterContainer">
       <div class="pill active" data-category="all">All Sweets</div>
       <div class="pill" data-category="warm">Warm Cakes</div>
@@ -119,246 +128,10 @@
       <div class="pill" data-category="vegan">Vegan Friendly</div>
     </div>
 
+
+
     <main class="menu-grid" id="menuGrid">
-      <article
-        class="card"
-        data-category="warm"
-        data-price="550"
-        data-name="molten lava cake"
-      >
-        <div class="img-container">
-          <span class="price-tag">Rs. 550</span>
-          <img
-            src="https://images.unsplash.com/photo-1762631176731-42672d735b85?q=80&w=1520&auto=format&fit=crop"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Molten Lava Cake</h3>
-          <span class="price">Rs. 550</span>
-          <p class="item-desc">
-            Freshly made chocolate mousse cake. Delicacy in cafe.
-          </p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('Molten Lava Cake', 550, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="card"
-        data-category="icecream"
-        data-price="675"
-        data-name="artisan gelato"
-      >
-        <div class="img-container">
-          <span class="badge-small">Best Seller</span>
-          <span class="price-tag">Rs. 675</span>
-          <img
-            src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=400"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Artisan Gelato</h3>
-          <span class="price">Rs. 675</span>
-          <p class="item-desc">
-            Hand-churned seasonal flavors. Choose 3 scoops.
-          </p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('Artisan Gelato', 675, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="card"
-        data-category="warm"
-        data-price="700"
-        data-name="black forest cake"
-      >
-        <div class="img-container">
-          <span class="price-tag">Rs. 700</span>
-          <img
-            src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=503&auto=format&fit=crop"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>The Black Forest Cake</h3>
-          <span class="price">Rs. 700</span>
-          <p class="item-desc">
-            A delicious German classic with an American spin.
-          </p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('The Black Forest Cake', 700, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="card"
-        data-category="warm"
-        data-price="400"
-        data-name="doughnut"
-      >
-        <div class="img-container">
-          <span class="price-tag">Rs. 400</span>
-          <img
-            src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1528&auto=format&fit=crop"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Doughnut</h3>
-          <span class="price">Rs. 400</span>
-          <p class="item-desc">
-            Sweet, fried pastry with a soft, fluffy inside.
-          </p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('Doughnut', 400, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="card"
-        data-category="warm"
-        data-price="530"
-        data-name="waffle ice cream"
-      >
-        <div class="img-container">
-          <span class="price-tag">Rs. 530</span>
-          <img
-            src="https://images.unsplash.com/photo-1593250186288-f06f69859f8e?q=80&w=1374&auto=format&fit=crop"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Waffle with Ice cream</h3>
-          <span class="price">Rs. 530</span>
-          <p class="item-desc">
-            Belgium waffle served with three scoops of vanilla.
-          </p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('Waffle with Ice cream', 530, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="card"
-        data-category="vegan"
-        data-price="630"
-        data-name="fruit bowl"
-      >
-        <div class="img-container">
-          <span class="price-tag">Rs. 630</span>
-          <span class="badge-small badge-vegan">Vegan</span>
-          <img
-            src="https://images.unsplash.com/photo-1742860888419-df3ea5d3edcc?q=80&w=981&auto=format&fit=crop"
-            class="card-img"
-          />
-        </div>
-        <div class="card-content">
-          <h3>Special Fruit Bowl</h3>
-          <span class="price">Rs. 630</span>
-          <p class="item-desc">Healthy fruit with yoghurt and crunchy nuts.</p>
-          <div class="card-actions">
-            <div class="quantity-picker">
-              <button onclick="changeQty(this, -1)">
-                <span class="material-symbols-outlined">remove</span>
-              </button>
-              <span class="qty-count">1</span>
-              <button onclick="changeQty(this, 1)">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-            <button
-              class="btn-add-cart"
-              onclick="addToCart('Special Fruit Bowl', 630, this)"
-            >
-              <span class="material-symbols-outlined">add_shopping_cart</span>
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </article>
+      <!-- Items will be loaded from array -->
     </main>
 
     <footer>
@@ -450,8 +223,158 @@
 
     <script src="../script.js"></script>
     <script>
-      initializeQuickBite();
-      updateMobileCartUI();
+      // Desserts Data Array
+      const desertsData = [
+        {
+          name: 'Molten Lava Cake',
+          price: 550,
+          image: 'https://images.unsplash.com/photo-1762631176731-42672d735b85?q=80&w=1520&auto=format&fit=crop',
+          description: 'Freshly made chocolate mousse cake. Delicacy in cafe.',
+          category: 'warm',
+          badge: null
+        },
+        {
+          name: 'Artisan Gelato',
+          price: 675,
+          image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=400',
+          description: 'Hand-churned seasonal flavors. Choose 3 scoops.',
+          category: 'icecream',
+          badge: 'Best Seller'
+        },
+        {
+          name: 'The Black Forest Cake',
+          price: 700,
+          image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=503&auto=format&fit=crop',
+          description: 'A delicious German classic with an American spin.',
+          category: 'warm',
+          badge: null
+        },
+        {
+          name: 'Doughnut',
+          price: 400,
+          image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1528&auto=format&fit=crop',
+          description: 'Sweet, fried pastry with a soft, fluffy inside.',
+          category: 'warm',
+          badge: null
+        },
+        {
+          name: 'Waffle with Ice Cream',
+          price: 530,
+          image: 'https://images.unsplash.com/photo-1593250186288-f06f69859f8e?q=80&w=1374&auto=format&fit=crop',
+          description: 'Belgium waffle served with three scoops of vanilla.',
+          category: 'warm',
+          badge: null
+        },
+        {
+          name: 'Special Fruit Bowl',
+          price: 630,
+          image: 'https://images.unsplash.com/photo-1742860888419-df3ea5d3edcc?q=80&w=981&auto=format&fit=crop',
+          description: 'Healthy fruit with yoghurt and crunchy nuts.',
+          category: 'vegan',
+          badge: 'Vegan'
+        }
+      ];
+
+      // Load items from array
+      function loadItems(itemsToDisplay = desertsData) {
+        const menuGrid = document.getElementById('menuGrid');
+        menuGrid.innerHTML = '';
+
+        itemsToDisplay.forEach(item => {
+          let badgeHTML = '';
+          if (item.badge) {
+            const badgeClass = item.badge === 'Best Seller' ? 'badge-small' : 'badge-small badge-vegan';
+            badgeHTML = `<span class="${badgeClass}">${item.badge}</span>`;
+          }
+
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.dataset.category = item.category;
+          card.dataset.price = item.price;
+          card.dataset.name = item.name.toLowerCase();
+          card.innerHTML = `
+            <div class="img-container">
+              ${badgeHTML}
+              <span class="price-tag">Rs. ${item.price}</span>
+              <img src="${item.image}" class="card-img" />
+            </div>
+            <div class="card-content">
+              <h3>${item.name}</h3>
+              <span class="price">Rs. ${item.price}</span>
+              <p class="item-desc">${item.description}</p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button onclick="changeQty(this, -1)">
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span class="qty-count">1</span>
+                  <button onclick="changeQty(this, 1)">
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart" onclick="addToCart('${item.name}', ${item.price}, this)">
+                  <span class="material-symbols-outlined">add_shopping_cart</span>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          `;
+          menuGrid.appendChild(card);
+        });
+      }
+
+      // Search functionality
+      function searchItems(query) {
+        const searchTerm = query.toLowerCase().trim();
+        if (searchTerm === '') {
+          loadItems(desertsData);
+        } else {
+          const filteredItems = desertsData.filter(item =>
+            item.name.toLowerCase().includes(searchTerm) ||
+            item.description.toLowerCase().includes(searchTerm)
+          );
+          loadItems(filteredItems);
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        loadItems();
+
+        // Add search event listener
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchItems(e.target.value);
+          });
+        }
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-pills .pill');
+        const menuGrid = document.getElementById('menuGrid');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.category;
+            const cards = menuGrid.querySelectorAll('.card');
+
+            cards.forEach(card => {
+              const category = card.dataset.category || "";
+              if (filter === "all" || category === filter) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        initializeQuickBite();
+        updateMobileCartUI();
+      });
     </script>
   </body>
 </html>
