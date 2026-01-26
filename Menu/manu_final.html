@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
   </head>
   <body>
     <div class="bg-glow-container">
@@ -288,12 +290,18 @@
       </div>
       <div class="divider"></div>
       <div class="cart-total">
-        <span class="text-muted">Total: <b>$0.00</b></span>
-        <button class="btn-checkout">Checkout</button>
+        <span class="text-muted">Total: <b>Rs. 0</b></span>
+        <button class="btn-checkout" onclick="sendOrderToKitchen()">
+          Checkout
+        </button>
       </div>
     </div>
 
     <script src="../script.js"></script>
     <script src="menu_final.js"></script>
+    <script>
+      initializeQuickBite();
+      updateMobileCartUI();
+    </script>
   </body>
 </html>

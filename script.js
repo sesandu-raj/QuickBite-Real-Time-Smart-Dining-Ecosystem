@@ -1,4 +1,50 @@
-let tableNumber = null;
+let cart = JSON.parse(localStorage.getItem("quickBiteCart")) || [];
+
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBxES9tk3bAFUu64JhDPLgHzPs5hUKLNvM",
+  authDomain: "resturant-cb358.firebaseapp.com",
+  projectId: "resturant-cb358",
+  storageBucket: "resturant-cb358.firebasestorage.app",
+  messagingSenderId: "806584741054",
+  appId: "1:806584741054:web:314fb1c462eba54c2cc2ef",
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+const db = firebase.firestore();
+
+async function sendOrderToKitchen() {
+  const tableNo = localStorage.getItem("assignedTable") || "Walk-in";
+  const customerName = localStorage.getItem("customerName") || "Guest";
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+
+  if (cart.length === 0) return alert("Your cart is empty!");
+
+  try {
+    await db.collection("orders").add({
+      table: tableNo,
+      customer: customerName,
+      items: cart,
+      totalPrice: totalPrice,
+      status: "Pending",
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    alert("Order sent to kitchen!");
+    localStorage.removeItem("quickBiteCart"); // Clear local cart after success
+    window.location.href = "../My_Orders/my_orders.html";
+  } catch (error) {
+    console.error("Firebase Error:", error);
+    alert("Failed to send order. Please try again.");
+  }
+}
+
+//==================================================
 
 function initializeQuickBite() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -152,8 +198,72 @@ function initScrollAnimations() {
   });
 }
 
-// Run on page load
-window.onload = function () {
+//Cart Functions
+// Global Cart State
+
+// Function to handle the + and - buttons on the food cards
+function changeQty(btn, delta) {
+  const qtySpan = btn.parentElement.querySelector(".qty-count");
+  let currentQty = parseInt(qtySpan.innerText);
+  currentQty = Math.max(1, currentQty + delta); // Minimum quantity is 1
+  qtySpan.innerText = currentQty;
+}
+
+// Add items to the persistent storage
+function addToCart(name, price, btn) {
+  const qtySpan = btn.parentElement.querySelector(".qty-count");
+  const quantity = parseInt(qtySpan.innerText);
+
+  // Check if item already exists in cart to update quantity
+  const existingItem = cart.find((item) => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += quantity;
+  } else {
+    cart.push({ name, price, quantity });
+  }
+
+  // Save to localStorage so it persists across pages
+  localStorage.setItem("quickBiteCart", JSON.stringify(cart));
+
+  // Visual feedback
+  btn.innerText = "Added!";
+  setTimeout(() => {
+    btn.innerHTML = `<span class="material-symbols-outlined">add_shopping_cart</span>Add to Cart`;
+  }, 1000);
+
+  updateMobileCartUI();
+}
+
+// Update the Mobile Cart Bar at the bottom
+function updateMobileCartUI() {
+  const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartTotalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+
+  const mobileCart = document.querySelector(".mobile-cart");
+  if (mobileCart) {
+    // Show/Hide based on content
+    mobileCart.style.display = cartItemsCount > 0 ? "flex" : "none";
+
+    // Update values
+    const countDisplay = mobileCart.querySelector(".font-bold");
+    const priceDisplay = mobileCart.querySelector("b");
+
+    if (countDisplay) countDisplay.innerText = `${cartItemsCount} Items`;
+    if (priceDisplay)
+      priceDisplay.innerText = `Rs. ${cartTotalPrice.toLocaleString()}`;
+  }
+}
+
+// Call this on every page load to restore the cart state
+window.addEventListener("DOMContentLoaded", () => {
+  updateMobileCartUI();
+});
+
+window.addEventListener("load", () => {
   initializeQuickBite();
   initScrollAnimations();
-};
+  updateMobileCartUI();
+});

@@ -216,6 +216,38 @@ header {
   line-height: 1.4;
 }
 
+/* Card Actions */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quantity-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 4px;
+}
+.quantity-picker button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  transition: var(--transition);
+}
+.quantity-picker button:hover {
+  color: var(--primary);
+}
+.qty-count {
+  font-weight: 700;
+  min-width: 30px;
+  text-align: center;
+}
+
 /* Buttons */
 .btn-add-cart {
   width: 100%;

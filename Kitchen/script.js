@@ -5,7 +5,7 @@ db.collection("orders").onSnapshot(
   (snapshot) => {
     console.log(
       "Current data: ",
-      snapshot.docs.map((doc) => doc.data())
+      snapshot.docs.map((doc) => doc.data()),
     ); // Check your console!
 
     if (snapshot.empty) {
@@ -21,10 +21,17 @@ db.collection("orders").onSnapshot(
 
       // ONLY create the card if the status is NOT 'Delivered'
       if (order.status !== "Delivered") {
-        const itemList = order.items
-          ? order.items.map((i) => `<li>${i}</li>`).join("")
-          : "No items";
-
+        const itemList =
+          order.items && Array.isArray(order.items)
+            ? order.items
+                .map((i) => {
+                  // Check if it's the new object structure or old string structure
+                  return typeof i === "object"
+                    ? `<li>${i.quantity}x ${i.name}</li>`
+                    : `<li>${i}</li>`;
+                })
+                .join("")
+            : "No items";
         const card = document.createElement("div");
         card.className = `order-card ${order.status || "Pending"}`;
 
@@ -46,7 +53,7 @@ db.collection("orders").onSnapshot(
     // This will tell you EXACTLY why it's not working
     console.error("Firebase Subscription Error:", error);
     container.innerHTML = `<p style="color:red">Error: ${error.message}</p>`;
-  }
+  },
 );
 
 function updateStatus(orderId, newStatus) {
