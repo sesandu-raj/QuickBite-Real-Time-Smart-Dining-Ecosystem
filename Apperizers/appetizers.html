@@ -102,13 +102,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Truffle Fries</h3>
-                    <span class="price">$6.50</span>
+                    <span class="price">Rs. 650</span>
                 </div>
                 <p class="description">Hand cut golden fries tossed in priemium truffle oil and grated parmesan</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Truffle Fries', 650, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
 
@@ -118,13 +129,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Crispy Calamari</h3>
-                    <span class="price">$9.00</span>
+                    <span class="price">Rs. 900</span>
                 </div>
                 <p class="description">Lightly breaded squidrings served with a side of spicy house marinara</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Crispy Calamari', 900, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
 
@@ -134,13 +156,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Mozzarella Sticks</h3>
-                    <span class="price">$7.50</span>
+                    <span class="price">Rs. 750</span>
                 </div>
                 <p class="description">Six gooey, herb-crusted sticks served with our signature zesty diping sauce</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Mozzarella Sticks', 750, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
              <article class="card" data-category="vegan,best">
@@ -149,13 +182,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Garlic Knots</h3>
-                    <span class="price">$5.00</span>
+                    <span class="price">Rs. 500</span>
                 </div>
                 <p class="description">Freshly baked dough Knots brushed with roasted garlic butter and sea salt</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Garlic Knots', 500, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
              <article class="card" data-category="best">
@@ -163,13 +207,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Classic Bruschetta</h3>
-                    <span class="price">$7.50</span>
+                    <span class="price">Rs. 750</span>
                 </div>
                 <p class="description">Toasted ciabatta topped with vine-ripened tomatoes, basil, and balsamic glaze</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Classic Bruschetta', 750, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
             </article>
@@ -179,13 +234,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Baffalo Sliders</h3>
-                    <span class="price">$10.50</span>
+                    <span class="price">Rs. 1050</span>
                 </div>
                 <p class="description">Juicy mini chicken sliders tossed in spicy buffalo sauce, topped with creamy dressing</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Baffalo Sliders', 1050, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
              <article class="card" data-category="vegan">
@@ -194,13 +260,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Veg Spring Rolls</h3>
-                    <span class="price">$1.00</span>
+                    <span class="price">Rs. 100</span>
                 </div>
                 <p class="description">Crispy rolls filled with seasoned fresh vegetables, served hot with dipping sauce</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Veg Spring Rolls', 100, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
              <article class="card" data-category="vegan">
@@ -209,13 +286,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Paneer Tikka</h3>
-                    <span class="price">$3.00</span>
+                    <span class="price">Rs. 300</span>
                 </div>
                 <p class="description">Soft paneer cubes marinated in spices and grilled to perfection, served hot.</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Paneer Tikka', 300, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
                      <article class="card" data-category="spicy">
@@ -224,13 +312,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Chicken Wings</h3>
-                    <span class="price">$5.00</span>
+                    <span class="price">Rs. 500</span>
                 </div>
                 <p class="description">Juicy chicken wings marinated in spices and fried or grilled until crispy and flavorful.</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Chicken Wings', 500, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
                <article class="card" data-category="best">
@@ -239,13 +338,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>prawn tempura</h3>
-                    <span class="price">$3.50</span>
+                    <span class="price">Rs. 350</span>
                 </div>
                 <p class="description">Crispy, light-battered prawns fried to golden perfection, served hot.</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('prawn tempura', 350, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
              <article class="card" data-category="spicy">
@@ -254,13 +364,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Fish Cutlet</h3>
-                    <span class="price">$2.50</span>
+                    <span class="price">Rs. 250</span>
                 </div>
                 <p class="description">Deep-fried fish cutlets packed with aromatic spices, crispy outside and juicy inside.</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Fish Cutlet', 250, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
             <article class="card" data-category="vegan">
@@ -269,13 +390,24 @@
             <div class="card-content">
                 <div class="card-header">
                     <h3>Onion Rings</h3>
-                    <span class="price">$0.50</span>
+                    <span class="price">Rs. 50</span>
                 </div>
                 <p class="description">Golden fried onion rings, crispy and delicious.</p>
-                <div class="quantity-selector">
-                    <span class="add">-</span><span>1</span><span class="add">+</span>
+                <div class="card-actions">
+                  <div class="quantity-picker">
+                    <button onclick="changeQty(this, -1)">
+                      <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <span class="qty-count">1</span>
+                    <button onclick="changeQty(this, 1)">
+                      <span class="material-symbols-outlined">add</span>
+                    </button>
+                  </div>
+                  <button class="btn-add-cart" onclick="addToCart('Onion Rings', 50, this)">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                    Add to Cart
+                  </button>
                 </div>
-                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
             </div>
         </article>
         <script>

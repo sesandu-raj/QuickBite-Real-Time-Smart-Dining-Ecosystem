@@ -45,34 +45,30 @@ header {
   width: 100% !important;
 }
 
-        /* Breadcrumbs */
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-            color: var(--text-muted);
-            margin-top: 80px;
-        }
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  margin-top: 80px;
+}
 
-        .breadcrumbs a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
+.breadcrumbs a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
 
-        .breadcrumbs a:hover {
-            color: var(--primary-orange);
-        }
+.breadcrumbs a:hover {
+  color: var(--primary-orange);
+}
 
-        .breadcrumbs span.material-symbols-outlined {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 1.1rem;
+.breadcrumbs span.material-symbols-outlined {
+  font-size: 18px;
+  color: var(--text-muted);
 }
 
 .search-container {
@@ -171,6 +167,8 @@ header {
 .img-container {
   position: relative;
   height: 200px;
+  width: 100%;
+  overflow: hidden; /* Keeps images inside the rounded corners */
 }
 
 .card-img {
@@ -183,12 +181,14 @@ header {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--primary-orange);
+  color: white;
   font-weight: bold;
   font-size: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 6px 12px;
   border-radius: 6px;
+  z-index: 10;
+  display: block;
 }
 
 .badge-small {
@@ -210,14 +210,23 @@ header {
 
 .card-content {
   padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--card-bg); /* Ensures text has a background */
+  z-index: 2;
 }
 
 .card-content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
+  color: #ffffff !important; /* Forces the title to be white */
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  display: block; /* Ensures it takes up its own line */
+}
+
+.price {
+  color: var(--primary-orange);
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .item-desc {
@@ -279,6 +288,58 @@ header {
 
 .add-btn.active {
   background: var(--primary-orange);
+}
+
+/* Card Actions */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quantity-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.quantity-picker button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.qty-count {
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}
+
+.btn-add-cart {
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(244, 140, 37, 0.2);
+  transition: var(--transition);
+}
+
+.btn-add-cart:hover {
+  background: #e67e17;
+  transform: scale(1.02);
 }
 
 /* --- Floating CTA --- */
