@@ -1,7 +1,6 @@
-let tableNumber = null;
 let cart = JSON.parse(localStorage.getItem("quickBiteCart")) || [];
-//Firebase Configuration
 
+// Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBxES9tk3bAFUu64JhDPLgHzPs5hUKLNvM",
   authDomain: "resturant-cb358.firebaseapp.com",
@@ -11,7 +10,6 @@ const firebaseConfig = {
   appId: "1:806584741054:web:314fb1c462eba54c2cc2ef",
 };
 
-// Initialize Firebase (Ensure you have the Firebase SDK scripts in your HTML)
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -34,7 +32,7 @@ async function sendOrderToKitchen() {
       items: cart,
       totalPrice: totalPrice,
       status: "Pending",
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     alert("Order sent to kitchen!");
@@ -200,12 +198,6 @@ function initScrollAnimations() {
   });
 }
 
-// Run on page load
-window.onload = function () {
-  initializeQuickBite();
-  initScrollAnimations();
-};
-
 //Cart Functions
 // Global Cart State
 
@@ -268,51 +260,10 @@ function updateMobileCartUI() {
 // Call this on every page load to restore the cart state
 window.addEventListener("DOMContentLoaded", () => {
   updateMobileCartUI();
-  initGlobalNav(); // Your existing nav logic
 });
 
-async function sendOrderToKitchen() {
-    // 1. Gather data from local storage
-    const tableNo = localStorage.getItem("assignedTable") || "Not Assigned";
-    const customerName = localStorage.getItem("customerName") || "Guest";
-    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-
-    // 2. Validation
-    if (cart.length === 0) {
-        alert("Your cart is empty! Add some Sri Lankan fuel first.");
-        return;
-    }
-
-    const checkoutBtn = document.querySelector(".btn-checkout");
-    checkoutBtn.disabled = true;
-    checkoutBtn.innerText = "Processing...";
-
-    try {
-        // 3. Send to Firebase using the demo project structure
-        const docRef = await db.collection("orders").add({
-            table: tableNo,
-            customer: customerName,
-            items: cart, // Array of {name, price, quantity}
-            totalPrice: totalPrice,
-            status: "Pending",
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-
-        // 4. Save the ID for tracking
-        localStorage.setItem("lastOrderId", docRef.id);
-
-        alert("Order received! The kitchen is starting on your meal.");
-        
-        // 5. Clear the cart and redirect
-        localStorage.removeItem("quickBiteCart");
-        cart = []; // Reset local variable
-        window.location.href = "../My_Orders/my_orders.html";
-
-    } catch (error) {
-        console.error("Firebase Order Error:", error);
-        alert("Failed to send order. Please check your internet connection.");
-    } finally {
-        checkoutBtn.disabled = false;
-        checkoutBtn.innerText = "Checkout";
-    }
-}
+window.addEventListener("load", () => {
+  initializeQuickBite();
+  initScrollAnimations();
+  updateMobileCartUI();
+});
