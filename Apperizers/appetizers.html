@@ -87,6 +87,14 @@
         <h1>Appetizers</h1>
         <p>Start your meal with our student-favorite small plates</p>
     </section>
+        <div class="search-container glass">
+            <span class="material-symbols-outlined">search</span>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for Fries, Tempura or Sticks..."
+            />
+          </div>
 
    <ul class="filters">
     <li class="active" data-filter="all">All Items</li>
@@ -95,323 +103,208 @@
     <li data-filter="best">Popular</li>
 </ul>
 
-    <main class="menu-grid">
-        <article class="card" data-category="best">
-            <span class="badge best-sellar" >Best Seller</span>
-            <img src="gourmet-truffle-fries-plate-crispy-fries-topped-arugula-shaved-parmesan-creamy-sauce-403834741.webp" alt="Truffle-Fries" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Truffle Fries</h3>
-                    <span class="price">Rs. 650</span>
-                </div>
-                <p class="description">Hand cut golden fries tossed in priemium truffle oil and grated parmesan</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Truffle Fries', 650, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
 
-        <article class="card"  data-category="spicy,best">
-            <span class="badge spicy">Spicy</span>
-            <img src="download.jpg" alt="crispy-calamari" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Crispy Calamari</h3>
-                    <span class="price">Rs. 900</span>
-                </div>
-                <p class="description">Lightly breaded squidrings served with a side of spicy house marinara</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Crispy Calamari', 900, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
 
-        <article class="card" data-category="best">
-            <span class="badge best-sellar" >Best Seller</span>
-            <img src="download (1).jpg" alt="mozzarella-sticks" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Mozzarella Sticks</h3>
-                    <span class="price">Rs. 750</span>
-                </div>
-                <p class="description">Six gooey, herb-crusted sticks served with our signature zesty diping sauce</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Mozzarella Sticks', 750, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-             <article class="card" data-category="vegan,best">
-            <span class="badge vegan">Vegan</span>
-            <img src="images.jpg" alt="garlic-knots" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Garlic Knots</h3>
-                    <span class="price">Rs. 500</span>
-                </div>
-                <p class="description">Freshly baked dough Knots brushed with roasted garlic butter and sea salt</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Garlic Knots', 500, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-             <article class="card" data-category="best">
-            <img src="images (1).jpg" alt="Classic Bruschetta" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Classic Bruschetta</h3>
-                    <span class="price">Rs. 750</span>
-                </div>
-                <p class="description">Toasted ciabatta topped with vine-ripened tomatoes, basil, and balsamic glaze</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Classic Bruschetta', 750, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-            </article>
-             <article class="card" data-category="spicy,best">
-                <span class="badge spicy" >Spicy</span>
-            <img src="images (2).jpg" alt="Baffalo-Sliders" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Baffalo Sliders</h3>
-                    <span class="price">Rs. 1050</span>
-                </div>
-                <p class="description">Juicy mini chicken sliders tossed in spicy buffalo sauce, topped with creamy dressing</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Baffalo Sliders', 1050, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-             <article class="card" data-category="vegan">
-            <span class="badge vegan">Vegan</span>
-            <img src="download (3).jpg" alt="garlic-knots" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Veg Spring Rolls</h3>
-                    <span class="price">Rs. 100</span>
-                </div>
-                <p class="description">Crispy rolls filled with seasoned fresh vegetables, served hot with dipping sauce</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Veg Spring Rolls', 100, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-             <article class="card" data-category="vegan">
-            <span class="badge vegan">Vegan</span>
-            <img src="download (2).jpg" alt="paneer-tikka" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Paneer Tikka</h3>
-                    <span class="price">Rs. 300</span>
-                </div>
-                <p class="description">Soft paneer cubes marinated in spices and grilled to perfection, served hot.</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Paneer Tikka', 300, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-                     <article class="card" data-category="spicy">
-            <span class="badge spicy">Spicy</span>
-            <img src="241152-fried-chicken-wings-ddmfs-hero-1x2-1261-7201cc37727446adb6698c269585d5a0.jpg" alt="chicken-wings" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Chicken Wings</h3>
-                    <span class="price">Rs. 500</span>
-                </div>
-                <p class="description">Juicy chicken wings marinated in spices and fried or grilled until crispy and flavorful.</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Chicken Wings', 500, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-               <article class="card" data-category="best">
-            <span class="badge best-sellar">Best Seller</span>
-            <img src="images (3).jpg" alt="prawn-tempura" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>prawn tempura</h3>
-                    <span class="price">Rs. 350</span>
-                </div>
-                <p class="description">Crispy, light-battered prawns fried to golden perfection, served hot.</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('prawn tempura', 350, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-             <article class="card" data-category="spicy">
-            <span class="badge best-sellar">Best Seller</span>
-            <img src="fish-cutlet.jpg" alt="fish-cutlet" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Fish Cutlet</h3>
-                    <span class="price">Rs. 250</span>
-                </div>
-                <p class="description">Deep-fried fish cutlets packed with aromatic spices, crispy outside and juicy inside.</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Fish Cutlet', 250, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
-            <article class="card" data-category="vegan">
-            <span class="badge vegan">Vegan</span>
-            <img src="download (4).jpg" alt="onion-rings" class="card-img">
-            <div class="card-content">
-                <div class="card-header">
-                    <h3>Onion Rings</h3>
-                    <span class="price">Rs. 50</span>
-                </div>
-                <p class="description">Golden fried onion rings, crispy and delicious.</p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button class="btn-add-cart" onclick="addToCart('Onion Rings', 50, this)">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                    Add to Cart
-                  </button>
-                </div>
-            </div>
-        </article>
+    <main class="menu-grid" id="menu-grid">
+        <!-- Items will be loaded from array -->
+    </main>
         <script>
     let cartCount = 0;
+
+    // Appetizers Data Array
+    const appetizersData = [
+      {
+        name: 'Truffle Fries',
+        price: 650,
+        image: 'gourmet-truffle-fries-plate-crispy-fries-topped-arugula-shaved-parmesan-creamy-sauce-403834741.webp',
+        description: 'Hand cut golden fries tossed in priemium truffle oil and grated parmesan',
+        category: 'best',
+        badge: 'Best Seller'
+      },
+      {
+        name: 'Crispy Calamari',
+        price: 900,
+        image: 'download.jpg',
+        description: 'Lightly breaded squidrings served with a side of spicy house marinara',
+        category: 'spicy,best',
+        badge: 'Spicy'
+      },
+      {
+        name: 'Mozzarella Sticks',
+        price: 750,
+        image: 'download (1).jpg',
+        description: 'Six gooey, herb-crusted sticks served with our signature zesty diping sauce',
+        category: 'best',
+        badge: 'Best Seller'
+      },
+      {
+        name: 'Garlic Knots',
+        price: 500,
+        image: 'images.jpg',
+        description: 'Freshly baked dough Knots brushed with roasted garlic butter and sea salt',
+        category: 'vegan,best',
+        badge: 'Vegan'
+      },
+      {
+        name: 'Classic Bruschetta',
+        price: 750,
+        image: 'images (1).jpg',
+        description: 'Toasted ciabatta topped with vine-ripened tomatoes, basil, and balsamic glaze',
+        category: 'best',
+        badge: null
+      },
+      {
+        name: 'Buffalo Sliders',
+        price: 1050,
+        image: 'images (2).jpg',
+        description: 'Juicy mini chicken sliders tossed in spicy buffalo sauce, topped with creamy dressing',
+        category: 'spicy,best',
+        badge: 'Spicy'
+      },
+      {
+        name: 'Veg Spring Rolls',
+        price: 100,
+        image: 'download (3).jpg',
+        description: 'Crispy rolls filled with seasoned fresh vegetables, served hot with dipping sauce',
+        category: 'vegan',
+        badge: 'Vegan'
+      },
+      {
+        name: 'Paneer Tikka',
+        price: 300,
+        image: 'download (2).jpg',
+        description: 'Soft paneer cubes marinated in spices and grilled to perfection, served hot.',
+        category: 'vegan',
+        badge: 'Vegan'
+      },
+      {
+        name: 'Chicken Wings',
+        price: 500,
+        image: '241152-fried-chicken-wings-ddmfs-hero-1x2-1261-7201cc37727446adb6698c269585d5a0.jpg',
+        description: 'Juicy chicken wings marinated in spices and fried or grilled until crispy and flavorful.',
+        category: 'spicy',
+        badge: 'Spicy'
+      },
+      {
+        name: 'Prawn Tempura',
+        price: 350,
+        image: 'images (3).jpg',
+        description: 'Crispy, light-battered prawns fried to golden perfection, served hot.',
+        category: 'best',
+        badge: 'Best Seller'
+      },
+      {
+        name: 'Fish Cutlet',
+        price: 250,
+        image: 'fish-cutlet.jpg',
+        description: 'Deep-fried fish cutlets packed with aromatic spices, crispy outside and juicy inside.',
+        category: 'spicy',
+        badge: 'Best Seller'
+      },
+      {
+        name: 'Onion Rings',
+        price: 50,
+        image: 'download (4).jpg',
+        description: 'Golden fried onion rings, crispy and delicious.',
+        category: 'vegan',
+        badge: 'Vegan'
+      }
+    ];
+
+    // Load items from array
+    function loadItems(itemsToDisplay = appetizersData) {
+      const menuGrid = document.getElementById('menu-grid');
+      menuGrid.innerHTML = '';
+
+      itemsToDisplay.forEach(item => {
+        let badgeHTML = '';
+        if (item.badge) {
+          const badgeClass = item.badge === 'Best Seller' ? 'best-sellar' : item.badge.toLowerCase();
+          badgeHTML = `<span class="badge ${badgeClass}">${item.badge}</span>`;
+        }
+
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.category = item.category;
+        card.innerHTML = `
+          ${badgeHTML}
+          <img src="${item.image}" alt="${item.name}" class="card-img">
+          <div class="card-content">
+            <div class="card-header">
+              <h3>${item.name}</h3>
+              <span class="price">Rs. ${item.price}</span>
+            </div>
+            <p class="description">${item.description}</p>
+            <div class="card-actions">
+              <div class="quantity-picker">
+                <button onclick="changeQty(this, -1)">
+                  <span class="material-symbols-outlined">remove</span>
+                </button>
+                <span class="qty-count">1</span>
+                <button onclick="changeQty(this, 1)">
+                  <span class="material-symbols-outlined">add</span>
+                </button>
+              </div>
+              <button class="btn-add-cart" onclick="addToCart('${item.name}', ${item.price}, this)">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        `;
+        menuGrid.appendChild(card);
+      });
+    }
+
+    // Search functionality
+    function searchItems(query) {
+      const searchTerm = query.toLowerCase().trim();
+      if (searchTerm === '') {
+        loadItems(appetizersData);
+      } else {
+        const filteredItems = appetizersData.filter(item =>
+          item.name.toLowerCase().includes(searchTerm) ||
+          item.description.toLowerCase().includes(searchTerm)
+        );
+        loadItems(filteredItems);
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadItems();
+
+      // Add search event listener
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchItems(e.target.value);
+        });
+      }
+
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filters li');
+      const menuGrid = document.getElementById('menu-grid');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filter = button.dataset.filter;
+          const cards = menuGrid.querySelectorAll('.card');
+
+          cards.forEach(card => {
+            const category = card.dataset.category || "";
+            if (filter === "all" || category.split(',').includes(filter)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
 
     // Update cart count UI
     function updateCartCount() {
@@ -436,62 +329,7 @@
             quantity.textContent = value + 1;
         });
     });
-
-    // Add to cart button
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const card = button.closest('.card');
-            const name = card.querySelector('h3').textContent;
-            const qty = parseInt(card.querySelector('.quantity-selector span:nth-child(2)').textContent);
-
-            cartCount += qty;
-            updateCartCount();
-
-            alert(`${qty} × ${name} added to cart 🛒`);
-        });
-    });
-        const searchInput = document.querySelector('.search-bar');
-    const cards = document.querySelectorAll('.menu-grid .card');
-
-    searchInput.addEventListener('input', () => {
-        const searchText = searchInput.value.toLowerCase();
-
-        cards.forEach(card => {
-            const itemName = card.querySelector('h3').textContent.toLowerCase();
-            const itemDesc = card.querySelector('.description').textContent.toLowerCase();
-
-            if (itemName.includes(searchText) || itemDesc.includes(searchText)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
- const filterButtons = document.querySelectorAll('.filters li');
-const menuCards = document.querySelectorAll('.menu-grid .card');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-
-        // Active state
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-
-        menuCards.forEach(card => {
-            const category = card.dataset.category || "";
-
-            if (filter === "all" || category.split(',').includes(filter)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    });
-});
-
-</script>
+        </script>
     </main>
 
     <footer>

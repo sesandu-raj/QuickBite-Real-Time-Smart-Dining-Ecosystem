@@ -98,156 +98,26 @@
           </p>
         </div>
 
-        <div class="filter-chips">
-          <button class="chip active">
-            <span class="material-symbols-outlined">local_cafe</span> Coffee
-          </button>
-          <button class="chip glass">
-            <span class="material-symbols-outlined">emoji_food_beverage</span>
-            Ceylon Teas
-          </button>
-          <button class="chip glass">
-            <span class="material-symbols-outlined">liquor</span> Mocktails
-          </button>
-          <button class="chip glass">
-            <span class="material-symbols-outlined">water_drop</span> Refreshers
-          </button>
+        <div class="search-container glass">
+          <span class="material-symbols-outlined">search</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for coffee, tea, mocktails..."
+          />
         </div>
 
-        <section class="mb-12">
-          <div class="grid-header">
-            <h2 class="section-subtitle">
-              <span class="material-symbols-outlined text-primary"
-                >coffee_maker</span
-              >
-              Signature Coffee
-            </h2>
-            <span class="item-count">8 Items</span>
-          </div>
+        <div class="filter-pills" id="filterContainer">
+          <div class="pill active" data-category="all">All Drinks</div>
+          <div class="pill" data-category="coffee">Coffee</div>
+          <div class="pill" data-category="tea">Tea</div>
+          <div class="pill" data-category="mocktails">Mocktails</div>
+          <div class="pill" data-category="refreshers">Refreshers</div>
+        </div>
 
-          <div class="drinks-grid">
-            <div class="drink-card glass">
-              <div class="card-media">
-                <img
-                  src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1000"
-                  alt="Iced Oat Latte"
-                />
-                <span class="badge-tag">Best Seller</span>
-              </div>
-              <div class="card-body">
-                <div class="title-row">
-                  <h3>Iced Oat Latte</h3>
-                  <span class="price">Rs. 750</span>
-                </div>
-                <p class="desc">
-                  Double espresso, creamy oat milk, and a touch of vanilla bean.
-                </p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button
-                    class="btn-add-cart"
-                    onclick="addToCart('Iced Oat Latte', 750, this)"
-                  >
-                    <span class="material-symbols-outlined"
-                      >add_shopping_cart</span
-                    >
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="drink-card glass">
-              <div class="card-media">
-                <img
-                  src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000"
-                  alt="Nitro Cold Brew"
-                />
-              </div>
-              <div class="card-body">
-                <div class="title-row">
-                  <h3>Nitro Cold Brew</h3>
-                  <span class="price">Rs. 850</span>
-                </div>
-                <p class="desc">
-                  Velvety smooth, nitrogen-infused cold brew coffee.
-                </p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button
-                    class="btn-add-cart"
-                    onclick="addToCart('Nitro Cold Brew', 850, this)"
-                  >
-                    <span class="material-symbols-outlined"
-                      >add_shopping_cart</span
-                    >
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="mb-12">
-          <div class="grid-header">
-            <h2 class="section-subtitle">
-              <span class="material-symbols-outlined text-primary"
-                >local_bar</span
-              >
-              Artisan Mocktails
-            </h2>
-            <span class="item-count">5 Items</span>
-          </div>
-
-          <div class="drinks-grid">
-            <div class="drink-card glass">
-              <div class="card-media">
-                <img
-                  src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=1000"
-                  alt="Passion Chill"
-                />
-                <span class="badge-tag secondary">New</span>
-              </div>
-              <div class="card-body">
-                <div class="title-row">
-                  <h3>Passion Chill</h3>
-                  <span class="price">Rs. 650</span>
-                </div>
-                <p class="desc">
-                  Fresh passion fruit nectar, ginger ale, and lime zest.
-                </p>
-                <div class="card-actions">
-                  <div class="quantity-picker">
-                    <button onclick="changeQty(this, -1)">
-                      <span class="material-symbols-outlined">remove</span>
-                    </button>
-                    <span class="qty-count">1</span>
-                    <button onclick="changeQty(this, 1)">
-                      <span class="material-symbols-outlined">add</span>
-                    </button>
-                  </div>
-                  <button
-                    class="btn-add-cart"
-                    onclick="addToCart('Passion Chill', 650, this)"
-                  >
-                    <span class="material-symbols-outlined"
+        <div id="drinks-container">
+          <!-- Drinks will be loaded from array -->
+        </div>
                       >add_shopping_cart</span
                     >
                     Add to Cart
@@ -357,8 +227,173 @@
 
     <script src="../script.js"></script>
     <script>
-      initializeQuickBite();
-      updateMobileCartUI();
+      // Drinks Data Array
+      const drinksData = [
+        {
+          name: 'Iced Oat Latte',
+          price: 750,
+          image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1000',
+          description: 'Double espresso, creamy oat milk, and a touch of vanilla bean.',
+          category: 'coffee',
+          badge: 'Best Seller'
+        },
+        {
+          name: 'Nitro Cold Brew',
+          price: 850,
+          image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1000',
+          description: 'Velvety smooth, nitrogen-infused cold brew coffee.',
+          category: 'coffee',
+          badge: null
+        },
+        {
+          name: 'Passion Chill',
+          price: 650,
+          image: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=1000',
+          description: 'Fresh passion fruit nectar, ginger ale, and lime zest.',
+          category: 'mocktails',
+          badge: 'New'
+        },
+        {
+          name: 'Mango Lassi',
+          price: 500,
+          image: 'https://images.unsplash.com/photo-1587281757921-a62235b7cfd9?q=80&w=1000',
+          description: 'Creamy yogurt blend with fresh mango and cardamom.',
+          category: 'refreshers',
+          badge: null
+        },
+        {
+          name: 'Oolong Tea',
+          price: 450,
+          image: 'https://images.unsplash.com/photo-1597318066831-a95eac82ca0f?q=80&w=1000',
+          description: 'Smooth, semi-oxidized traditional oolong tea.',
+          category: 'tea',
+          badge: null
+        },
+        {
+          name: 'Espresso Shot',
+          price: 250,
+          image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d95eca?q=80&w=1000',
+          description: 'Classic double shot of premium espresso.',
+          category: 'coffee',
+          badge: null
+        },
+        {
+          name: 'Green Tea Latte',
+          price: 550,
+          image: 'https://images.unsplash.com/photo-1597318066831-a95eac82ca0f?q=80&w=1000',
+          description: 'Creamy matcha blend with steamed milk and honey.',
+          category: 'tea',
+          badge: null
+        },
+        {
+          name: 'Berry Cooler',
+          price: 600,
+          image: 'https://images.unsplash.com/photo-1590080876-8e16e0fe5f0d?q=80&w=1000',
+          description: 'Mixed berry juice with ice and fresh mint.',
+          category: 'refreshers',
+          badge: null
+        }
+      ];
+
+      // Load drinks from array
+      function loadDrinks(drinksToDisplay = drinksData) {
+        const container = document.getElementById('drinks-container');
+        container.innerHTML = '';
+
+        drinksToDisplay.forEach(drink => {
+          let badgeHTML = '';
+          if (drink.badge) {
+            const badgeClass = drink.badge === 'New' ? 'badge-tag secondary' : 'badge-tag';
+            badgeHTML = `<span class="${badgeClass}">${drink.badge}</span>`;
+          }
+
+          const card = document.createElement('div');
+          card.className = 'drink-card glass';
+          card.dataset.category = drink.category;
+          card.innerHTML = `
+            <div class="card-media">
+              <img src="${drink.image}" alt="${drink.name}" />
+              ${badgeHTML}
+            </div>
+            <div class="card-body">
+              <div class="title-row">
+                <h3>${drink.name}</h3>
+                <span class="price">Rs. ${drink.price}</span>
+              </div>
+              <p class="desc">${drink.description}</p>
+              <div class="card-actions">
+                <div class="quantity-picker">
+                  <button onclick="changeQty(this, -1)">
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+                  <span class="qty-count">1</span>
+                  <button onclick="changeQty(this, 1)">
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
+                </div>
+                <button class="btn-add-cart" onclick="addToCart('${drink.name}', ${drink.price}, this)">
+                  <span class="material-symbols-outlined">add_shopping_cart</span>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // Search functionality
+      function searchDrinks(query) {
+        const searchTerm = query.toLowerCase().trim();
+        if (searchTerm === '') {
+          loadDrinks(drinksData);
+        } else {
+          const filteredDrinks = drinksData.filter(drink =>
+            drink.name.toLowerCase().includes(searchTerm) ||
+            drink.description.toLowerCase().includes(searchTerm)
+          );
+          loadDrinks(filteredDrinks);
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        loadDrinks();
+
+        // Add search event listener
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchDrinks(e.target.value);
+          });
+        }
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-pills .pill');
+        const container = document.getElementById('drinks-container');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.category;
+            const cards = container.querySelectorAll('.drink-card');
+
+            cards.forEach(card => {
+              const category = card.dataset.category || "";
+              if (filter === "all" || category === filter) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        initializeQuickBite();
+        updateMobileCartUI();
+      });
     </script>
   </body>
 </html>
