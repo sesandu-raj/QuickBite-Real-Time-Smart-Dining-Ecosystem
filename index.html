@@ -207,102 +207,7 @@
             >
           </div>
 
-          <div class="team-grid">
-            <div class="team-card glass animate-on-scroll">
-              <div class="portrait-wrapper">
-                <div
-                  class="portrait"
-                  style="
-                    background-image: url(&quot;https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500&quot;);
-                  "
-                ></div>
-                <div class="role-icon">
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 18px"
-                    >coffee</span
-                  >
-                </div>
-              </div>
-              <h3>Alex Chen</h3>
-              <span class="role-title">Head Barista</span>
-              <p class="quote">
-                "Master of the triple-shot espresso and mid-term motivation."
-              </p>
-            </div>
-
-            <div class="team-card glass">
-              <div class="portrait-wrapper">
-                <div
-                  class="portrait"
-                  style="
-                    background-image: url(&quot;https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=500&quot;);
-                  "
-                ></div>
-                <div class="role-icon">
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 18px"
-                    >schedule</span
-                  >
-                </div>
-              </div>
-              <h3>Sarah Jenkins</h3>
-              <span class="role-title">Operations Lead</span>
-              <p class="quote">
-                "Ensuring our 24/7 service stays seamless and the vibes stay
-                chill."
-              </p>
-            </div>
-
-            <div class="team-card glass animate-on-scroll">
-              <div class="portrait-wrapper">
-                <div
-                  class="portrait"
-                  style="
-                    background-image: url(&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500&quot;);
-                  "
-                ></div>
-                <div class="role-icon">
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 18px"
-                    >palette</span
-                  >
-                </div>
-              </div>
-              <h3>Jordan Taylor</h3>
-              <span class="role-title">Latte Artist</span>
-              <p class="quote">
-                "Your oat milk latte is my canvas. Crafting fuel for your
-                brain."
-              </p>
-            </div>
-
-            <div class="team-card glass animate-on-scroll">
-              <div class="portrait-wrapper">
-                <div
-                  class="portrait"
-                  style="
-                    background-image: url(&quot;https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=500&quot;);
-                  "
-                ></div>
-                <div class="role-icon">
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 18px"
-                    >groups</span
-                  >
-                </div>
-              </div>
-              <h3>Mia Rodriguez</h3>
-              <span class="role-title">Community Lead</span>
-              <p class="quote">
-                "Ensuring every student feels at home, whether it's 3 AM or 3
-                PM."
-              </p>
-            </div>
-          </div>
+          <div class="team-grid" id="team-grid-container"></div>
         </section>
         <section class="cta-section container animate-on-scroll">
           <div class="cta-card glass">
@@ -425,7 +330,58 @@
 
     <script src="script.js"></script>
     <script>
+      // Team Members Data
+      const teamMembers = [
+        {
+          name: "Sajinthan",
+          role: "Head Barista",
+          icon: "coffee",
+          quote: "Master of the triple-shot espresso and mid-term motivation.",
+          image: "sajinthan.jpg"
+        },
+        {
+          name: "semil",
+          role: "Operations Lead",
+          icon: "schedule",
+          quote: "Ensuring our 24/7 service stays seamless and the vibes stay chill.",
+          image: "semil.jpeg"
+        },
+        {
+          name: "Thusinthan",
+          role: "Latte Artist",
+          icon: "palette",
+          quote: "Your oat milk latte is my canvas. Crafting fuel for your brain.",
+          image: "thusi.jpg"
+        },
+        {
+          name: "Mohan",
+          role: "Community Lead",
+          icon: "groups",
+          quote: "Ensuring every student feels at home, whether it's 3 AM or 3 PM.",
+          image: "mohan.png"
+        }
+      ];
+
+      // Function to render team cards
+      function renderTeamCards() {
+        const container = document.getElementById("team-grid-container");
+        container.innerHTML = teamMembers.map((member, index) => `
+          <div class="team-card glass animate-on-scroll">
+            <div class="portrait-wrapper">
+              <div class="portrait" style="background-image: url(&quot;${member.image}&quot;);"></div>
+              <div class="role-icon">
+                <span class="material-symbols-outlined" style="font-size: 18px">${member.icon}</span>
+              </div>
+            </div>
+            <h3>${member.name}</h3>
+            <span class="role-title">${member.role}</span>
+            <p class="quote">"${member.quote}"</p>
+          </div>
+        `).join("");
+      }
+
       initializeQuickBite();
+      renderTeamCards();
       initScrollAnimations();
       updateMobileCartUI();
     </script>
