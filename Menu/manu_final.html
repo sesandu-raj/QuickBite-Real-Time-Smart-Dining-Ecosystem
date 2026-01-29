@@ -16,6 +16,95 @@
     />
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <style>
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-white);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        flex-direction: column;
+        width: 100vw;
+        z-index: 99;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 0;
+        padding: 0;
+      }
+
+      .mobile-nav li {
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 16px 20px;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .mobile-nav a:hover {
+        color: var(--primary);
+        background: rgba(244, 140, 37, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-wrapper {
+          gap: 10px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="bg-glow-container">
@@ -81,8 +170,22 @@
             <button class="btn-order">Order Now</button>
             <div id="nav-profile-slot"></div>
           </div>
+          <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </header>
+
+      <nav id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../Menu/manu_final.html" class="active">Menu</a></li>
+          <li><a href="../My_Orders/my_orders.html">My Orders</a></li>
+        </ul>
+        <button class="btn-order" style="margin: 12px 20px; width: calc(100% - 40px)">Order Now</button>
+      </nav>
 
       <main class="container">
         <section class="menu-hero">

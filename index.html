@@ -13,6 +13,208 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Hamburger Menu Styles */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+        margin-right: 20px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-white);
+        border-radius: 2px;
+        transition: var(--transition);
+        display: block;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        flex-direction: column;
+        width: 100vw;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 99;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mobile-nav li {
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 16px 20px;
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .mobile-nav a:hover,
+      .mobile-nav a.active {
+        color: var(--primary);
+        background: rgba(244, 140, 37, 0.1);
+      }
+
+      .mobile-nav-actions {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 12px;
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .mobile-nav-actions .btn-order {
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .nav-wrapper {
+          gap: 10px;
+        }
+
+        .logo h2 {
+          font-size: 1rem;
+        }
+
+        .logo .material-symbols-outlined {
+          font-size: 24px;
+        }
+
+        .nav-actions {
+          width: 100%;
+          justify-content: flex-start;
+          gap: 12px;
+        }
+
+        .btn-order {
+          display: none;
+        }
+
+        .mobile-nav {
+          position: fixed;
+          top: 70px;
+          width: 100vw;
+          left: 0;
+        }
+
+        .container {
+          padding: 0 16px;
+        }
+
+        .hero {
+          padding: 50px 0 40px;
+        }
+
+        .hero h1 {
+          font-size: clamp(1.75rem, 5vw, 2.5rem);
+        }
+
+        .hero-btns {
+          flex-direction: column;
+        }
+
+        .btn-main {
+          width: 100%;
+        }
+
+        .grid-3 {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 16px;
+        }
+
+        .section-title {
+          padding-bottom: 16px;
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 12px;
+        }
+
+        .hero {
+          padding: 30px 0;
+        }
+
+        .hero h1 {
+          font-size: 1.25rem;
+        }
+
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .card-img {
+          height: 120px;
+        }
+
+        .card-content {
+          padding: 10px;
+        }
+
+        .section-title h2 {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="bg-glow-container">
@@ -66,10 +268,25 @@
               </li>
             </ul>
           </nav>
+          <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="nav-actions" id="nav-actions">
             <button class="btn-order">Order Now</button>
             <div id="nav-profile-slot"></div>
           </div>
+          <nav class="mobile-nav" id="mobile-nav">
+            <ul>
+              <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/index.html" onclick="goHomeWithTable(event)">Home</a></li>
+              <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/Menu/manu_final.html">Menu</a></li>
+              <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/My_Orders/my_orders.html">My Orders</a></li>
+            </ul>
+            <div class="mobile-nav-actions">
+              <button class="btn-order" onclick="location.href='/QuickBite-Real-Time-Smart-Dining-Ecosystem/Menu/manu_final.html'">Order Now</button>
+            </div>
+          </nav>
         </div>
       </header>
 

@@ -1,5 +1,47 @@
 let cart = JSON.parse(localStorage.getItem("quickBiteCart")) || [];
 
+// Hamburger Menu Toggle
+function toggleMenu() {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileNav = document.getElementById("mobile-nav");
+  hamburger.classList.toggle("active");
+  mobileNav.classList.toggle("active");
+}
+
+// Close menu when link is clicked
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.getElementById("mobile-nav");
+      if (hamburger) hamburger.classList.remove("active");
+      if (mobileNav) mobileNav.classList.remove("active");
+    });
+  });
+
+  // Close menu on outside click
+  document.addEventListener("click", (e) => {
+    const hamburger = document.querySelector(".hamburger");
+    const mobileNav = document.getElementById("mobile-nav");
+    const header = document.querySelector("header");
+    if (header && !header.contains(e.target)) {
+      if (hamburger) hamburger.classList.remove("active");
+      if (mobileNav) mobileNav.classList.remove("active");
+    }
+  });
+
+  // Close menu on window resize to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.getElementById("mobile-nav");
+      if (hamburger) hamburger.classList.remove("active");
+      if (mobileNav) mobileNav.classList.remove("active");
+    }
+  });
+});
+
 // Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBxES9tk3bAFUu64JhDPLgHzPs5hUKLNvM",
