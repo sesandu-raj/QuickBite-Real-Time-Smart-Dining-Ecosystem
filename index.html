@@ -59,7 +59,7 @@
           </div>
           <nav>
             <ul>
-              <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/index.html">Home</a></li>
+              <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/index.html" onclick="goHomeWithTable(event)">Home</a></li>
               <li><a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/Menu/manu_final.html">Menu</a></li>
               <li>
                 <a href="/QuickBite-Real-Time-Smart-Dining-Ecosystem/My_Orders/my_orders.html">My Orders</a>
@@ -332,6 +332,22 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
     <script src="script.js"></script>
     <script>
+      // Navigate to home with a table query. Uses stored assignedTable or prompts the user.
+      function goHomeWithTable(e) {
+        e.preventDefault();
+        const base = '/QuickBite-Real-Time-Smart-Dining-Ecosystem/index.html';
+        const assigned = localStorage.getItem('assignedTable');
+        if (assigned) {
+          location.href = `${base}?table=${encodeURIComponent(assigned)}`;
+          return;
+        }
+        const t = prompt('Enter table number (e.g. 1 or 2) to view Home as that table:');
+        if (t && t.trim() !== '') {
+          const table = t.trim();
+          localStorage.setItem('assignedTable', table);
+          location.href = `${base}?table=${encodeURIComponent(table)}`;
+        }
+      }
       // Team Members Data
       const teamMembers = [
         {
