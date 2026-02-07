@@ -798,6 +798,96 @@ footer {
   flex: 1;
 }
 
+/* Additional responsive tweaks for header, grids, and cards */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .nav-actions {
+    order: 2;
+    width: auto;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .menu-section {
+    padding: 40px 0;
+  }
+
+  .grid-3 {
+    gap: 20px;
+  }
+
+  .card-img {
+    height: 200px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  nav ul {
+    gap: 12px;
+  }
+
+  .btn-order {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
+  }
+
+  .card-img {
+    height: 160px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .logo h2 {
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .prompt-card {
+    padding: 20px;
+    max-width: 320px;
+  }
+}
+
 .cart-total .text-muted {
   font-size: 0.85rem;
   color: var(--text-muted);
